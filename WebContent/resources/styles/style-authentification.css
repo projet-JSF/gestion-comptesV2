@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+
+.main{
+	width: 50%;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: 200px;
+	border : 1px;
+
+}
+
+.bouton{
+	
+	margin-left: 30%;
+	
+}
+
+.error{
+	color:red;
+	font-style: italic;

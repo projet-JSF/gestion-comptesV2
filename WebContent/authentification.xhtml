@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"> 
+
+<h:head>
+	<!-- Lien vers la feuille de style css 'style-authentification.css.css' -->
+	<h:outputStylesheet library="styles" name="style-authentification.css"/>
+</h:head> 
+
+
+<body> 
+	
+
+	
+	
+
+		<!-- ========= Formulaire de connexion ================ -->
+		<h:form>
+			<h:panelGrid id="grid" columns="3" cellpadding="10" cellspacing="2" styleClass="main">
+				<f:facet name="header">
+					Formulaire de connexion
+				</f:facet>
+				
+				<p:outputLabel value="Identifiant" for="idLogin" />
+				<p:inputText id= "idLogin" required ="true"  value="#{authenticationBean.login}" />
+				<p:message for="idLogin" />
+				
+				<p:outputLabel value="Mot de passe" for="idMdp" />
+				<p:inputText id= "idMdp" required ="true" value="#{authenticationBean.password}"/>
+				<p:message for="idMdp" />
+				
+				<f:facet name="footer">
+					<p:commandButton action="#{authenticationBean.connecterUtilisateur()}" value="Se connecter"  update="grid"  style="margin-left: 30%;" styleClass="ui-priority-primary"/>
+				</f:facet>
+			
+			
+				<!--============ Affichage des messages globaux===== -->
+	
+		<p:messages  styleClass="error" layout="table" showDetail="true"/>
+			</h:panelGrid>
+		
+		</h:form>
+		
+				<!--============ Affichage des messages globaux===== -->
+	
+		<p:messages  styleClass="error" layout="table" showDetail="true"/>
+	
+
+</body> 
+</html>

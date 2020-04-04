@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+<h1>Modifier Client</h1>
+
+	<h:form>
+	
+		<h:panelGrid columns="2" border="1" cellpadding="5" cellspacing="5">
+		
+			<f:facet name="header">
+				Formulaire de modification d'un client
+			</f:facet> 
+			
+			<h:outputLabel for="idIdClient" value="Identifiant" />
+			<h:inputText id="idIdClient" value="#{gestionClient.client.idClient}" />
+			
+			<h:outputLabel for="idNomClient" value="Nom" />
+			<h:inputText id="idNomClient" value="#{gestionClient.client.nom}" />
+			
+			<h:outputLabel for="idPrenomClient" value="Prenom" />
+			<h:inputText id="idPrenomClient" value="#{gestionClient.client.prenom}" />
+			
+			<h:outputLabel for="idAdresseClient" value="Adresse" />
+			<h:inputText id="idAdresseClient" value="#{gestionClient.client.adresse}" />
+			
+			<h:outputLabel for="idCodePostalClient" value="Code postal" />
+			<h:inputText id="idCodePostalClient" value="#{gestionClient.client.codePostal}" />
+			
+			<h:outputLabel for="idVilleClient" value="Ville" />
+			<h:inputText id="idVilleClient" value="#{gestionClient.client.ville}" />
+		
+			<h:outputLabel for="idTelephoneClient" value="Telephone" />
+			<h:inputText id="idTelephoneClient" value="#{gestionClient.client.telephone}" />
+			
+			<h:outputLabel for="idConseillerClient" value="Conseiller" />
+			<h:inputText id="idConseillerClient" value="#{gestionClient.client.conseillerId}" />
+		
+			<f:facet name="footer">
+				<h:commandButton action="listClient" actionListener="#{gestionClient.modifierClient}" value="Modifier" />
+			</f:facet>
+
+		</h:panelGrid>
+	
+	</h:form>
+</body> 
+</html>
