@@ -173,5 +173,144 @@
 		 -->
 		<p:commandButton action="addClient" actionListener="#{gestionClient.initialiserClient}" value="Ajouter un nouveau client" />
 	</h:form>
+	
+	
+<!-- ==================================================================================== -->
+<!-- =================================PARTIE COMPTE====================================== -->
+<!-- ==================================================================================== -->
+
+<!-- ===========Affichage de la liste des comptes appartenant au Conseiller =========== -->
+	<!--  Avec le composant jsf h:datatable -->
+	
+	
+	<h2> Liste des comptes</h2>
+
+	<h:form>
+		<p:dataTable value="#{gestionCompte.findComptesDuConseiller(authenticationBean.conseillerlogged.idConseiller)}" var="compte" resizableColumns="true" width="60%" border="1">
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Identifiant compte" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.idCompte }" />
+			</p:column>
+		
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="CompteId" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.compteId }" />
+			</p:column>
+			
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Solde" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.solde }" />
+			</p:column>
+			
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="TypeCompte" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.typeCompte }" />
+			</p:column>
+			
+						<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Taux" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.taux }" />
+			</p:column>
+			
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Decouvert" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				<h:outputText value="#{compte.decouvert }" />
+			</p:column>
+			
+			
+			
+			<!-- Colonne pour supprimer le compte -->
+			
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Supprimer" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				
+				<!--  Attribut du lien h:commandLink :
+							- action : clé d'outcom pour la navigation (ref faces-config.xml)
+							- actionListener : méthode à invoquer dans le managed bean
+				-->
+				
+				
+				<h:commandLink id="delete" action="listCompte" actionListener="#{gestionCompte.supprimerCompte}" >
+					
+						<!-- Passage de parametre au composant : idCompte deleteID / valeur = l'id du compte -->
+						<f:param id="deleteID" name="id" value="#{compte.idCompte}"/>
+						
+						<!--  label du lien  -->
+						<h:outputText value="supprimer" />
+				
+				</h:commandLink>
+				
+			</p:column>
+			
+			
+			
+			<!-- Colonne pour modifier le compte -->
+			
+			<p:column>
+				<!-- En tete de la colonne -->
+				<f:facet name="header">
+					<h:outputText value="Modifier" />
+				</f:facet>
+				<!-- Donnée de la colonne -->
+				
+				<!--  Attribut du lien h:commandLink :
+							- action : clé d'outcom pour la navigation (ref faces-config.xml)
+							- actionListener : méthode à invoquer dans le managed bean
+				-->
+				
+				
+				<h:commandLink id="update" action="editCompte" actionListener="#{gestionCompte.selectionnerCompte}" >
+					
+						<!-- Passage de parametre au composant : idCompte deleteID / valeur = l'id du compte -->
+						<f:param id="updateID" name="id" value="#{compte.idCompte}"/>
+						
+						<!--  label du lien  -->
+						<h:outputText value="Modifier" />
+				
+				</h:commandLink>
+				
+			</p:column>
+		
+		</p:dataTable>
+		
+		<br/><br/>
+		<!--  ==============Bouton pour ajouter un compte ===========================  -->
+		
+		<!-- attribut de h:commandButton :
+				action : clé d'outcom (cf faces-config.xml)
+				actionListener : méthode à invoquer la le managedbean
+				value : label du bouton
+		 -->
+		<p:commandButton action="addCompte" actionListener="#{gestionCompte.initialiserCompte}" value="Ajouter un nouveau compte" />
+	</h:form>
+
 </body> 
 </html>

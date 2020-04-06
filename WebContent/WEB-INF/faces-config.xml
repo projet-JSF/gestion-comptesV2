@@ -2,7 +2,7 @@
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <application/>
-	<!-- ======== CONFIG DE LA NAVIGATION =================== -->
+	<!-- ======== CONFIG DE LA NAVIGATION CLIENTS=================== -->
  	
  	<!--  1. regle de navigaation pour la page d'accueil.xhtml -->
  	
@@ -74,6 +74,87 @@
  		<navigation-case>
  			<!-- 3.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandbutton) -->
  			<from-outcome>listClient</from-outcome>
+ 			
+ 			<!-- 3.2.2 page de destination -->
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 			
+ 		</navigation-case>	
+
+ 		
+ 	</navigation-rule>		
+ 	
+ 	<!-- ======== CONFIG DE LA NAVIGATION COMPTES=================== -->
+ 	
+ 	<!--  1. regle de navigation pour la page d'accueil.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<!-- 1.1 page de départ -->
+ 		<from-view-id>/accueil.xhtml</from-view-id>
+ 		
+ 		<!-- 1.2 cas de navigation : accueil.xhtml vers accueil.xhtml (suppression) -->
+ 		<navigation-case>
+ 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
+ 			<from-outcome>listCompte</from-outcome>
+ 			
+ 			<!-- 1.2.2 page de destination -->
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 			
+ 		</navigation-case>
+ 		
+ 		
+ 		 <!-- 1.3 cas de navigation : accueil.xhtml vers /modifier_compte.xhtml (modifier) -->
+ 		<navigation-case>
+ 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
+ 			<from-outcome>editCompte</from-outcome>
+ 			
+ 			<!-- 1.2.2 page de destination -->
+ 			<to-view-id>/modifier_compte.xhtml</to-view-id>
+ 			
+ 		</navigation-case>
+ 		
+ 		 <!-- 1.4 cas de navigation : accueil.xhtml vers ajouter_compte.xhtml (modifier) -->
+ 		<navigation-case>
+ 			<!-- 1.4.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
+ 			<from-outcome>addCompte</from-outcome>
+ 			
+ 			<!-- 1.4.2 page de destination -->
+ 			<to-view-id>/ajouter_compte.xhtml</to-view-id>
+ 			
+ 		</navigation-case>
+ 	</navigation-rule>
+ 	
+ 
+  	<!--  2. regle de navigation pour la page modifier_compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<!-- 2.1 page de départ -->
+ 		<from-view-id>/modifier_compte.xhtml</from-view-id>
+ 		
+ 		<!-- 2.2 cas de navigation : modifier_compte.xhtml vers accueil.xhtml (suppression) -->
+ 		<navigation-case>
+ 			<!-- 2.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
+ 			<from-outcome>listCompte</from-outcome>
+ 			
+ 			<!-- 2.2.2 page de destination -->
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 			
+ 		</navigation-case>
+ 		
+  	</navigation-rule>	
+ 	
+ 	<!--  3. regle de navigation pour la page ajouter_compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<!-- 3.1 page de départ -->
+ 		<from-view-id>/ajouter_compte.xhtml</from-view-id>
+ 		
+ 		<!-- 3.2 cas de navigation : ajouter_compte.xhtml vers accueil.xhtml (suppression) -->
+ 		<navigation-case>
+ 			<!-- 3.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandbutton) -->
+ 			<from-outcome>listCompte</from-outcome>
  			
  			<!-- 3.2.2 page de destination -->
  			<to-view-id>/accueil.xhtml</to-view-id>
