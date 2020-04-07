@@ -4,63 +4,492 @@
   SHAPE="272,33,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#accueil.xhtml:0" NAME="item"
    PATH="/accueil.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listClient::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
     NAME="output1" PATH="/modifier_client.xhtml"
     TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
    <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
     NAME="output2" PATH="/ajouter_client.xhtml"
     TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#accueil.xhtml:1" NAME="item1"
-   PATH="/accueil.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listCompte::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listCompte" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier_compte.xhtml"
-    NAME="output1" PATH="/modifier_compte.xhtml"
-    TARGET="rules:#modifier_compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter_compte.xhtml"
-    NAME="output2" PATH="/ajouter_compte.xhtml"
-    TARGET="rules:#ajouter_compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output7" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output8" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output6" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#modifier_client.xhtml"
   PATH="/modifier_client.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#modifier_client.xhtml:0" NAME="item"
    PATH="/modifier_client.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listClient::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#ajouter_client.xhtml"
   PATH="/ajouter_client.xhtml" SHAPE="512,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#ajouter_client.xhtml:0" NAME="item"
    PATH="/ajouter_client.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listClient::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#modifier_compte.xhtml"
-  PATH="/modifier_compte.xhtml" SHAPE="32,289,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#modifier_compte.xhtml:0" NAME="item"
-   PATH="/modifier_compte.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listCompte::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listCompte" model-entity="JSFProcessItemOutput"/>
+ <PROCESS-ITEM NAME="rules:#afficher_client.xhtml"
+  PATH="/afficher_client.xhtml" SHAPE="640,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#afficher_client.xhtml:0" NAME="item"
+   PATH="/afficher_client.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#ajouter_compte.xhtml"
-  PATH="/ajouter_compte.xhtml" SHAPE="32,401,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#ajouter_compte.xhtml:0" NAME="item"
-   PATH="/ajouter_compte.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="listCompte::#accueil.xhtml" NAME="output"
-    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml"
-    TITLE="listCompte" model-entity="JSFProcessItemOutput"/>
+ <PROCESS-ITEM NAME="rules:#chercher_client.xhtml"
+  PATH="/chercher_client.xhtml" SHAPE="368,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#chercher_client.xhtml:0" NAME="item"
+   PATH="/chercher_client.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#liste_all_clients.xhtml"
+  PATH="/liste_all_clients.xhtml" SHAPE="96,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#liste_all_clients.xhtml:0" NAME="item"
+   PATH="/liste_all_clients.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#modifier-compte.xhtml"
+  PATH="/modifier-compte.xhtml" SHAPE="640,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#modifier-compte.xhtml:0" NAME="item"
+   PATH="/modifier-compte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ajouter-compte.xhtml"
+  PATH="/ajouter-compte.xhtml" SHAPE="640,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ajouter-compte.xhtml:0" NAME="item"
+   PATH="/ajouter-compte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#liste_all_comptes.xhtml"
+  PATH="/liste_all_comptes.xhtml" SHAPE="640,673,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#liste_all_comptes.xhtml:0" NAME="item"
+   PATH="/liste_all_comptes.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#afficher_compte.xhtml"
+  PATH="/afficher_compte.xhtml" SHAPE="640,449,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#afficher_compte.xhtml:0" NAME="item"
+   PATH="/afficher_compte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#chercher_compte.xhtml"
+  PATH="/chercher_compte.xhtml" SHAPE="640,561,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#chercher_compte.xhtml:0" NAME="item"
+   PATH="/chercher_compte.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#virement.xhtml" PATH="/virement.xhtml"
+  SHAPE="640,481,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#virement.xhtml:0" NAME="item"
+   PATH="/virement.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>

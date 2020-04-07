@@ -16,39 +16,37 @@
 	
 
 	
-	
+	<div align="center" class="main">
 
 		<!-- ========= Formulaire de connexion ================ -->
 		<h:form>
-			<h:panelGrid id="grid" columns="3" cellpadding="10" cellspacing="2" styleClass="main">
-				<f:facet name="header">
-					Formulaire de connexion
-				</f:facet>
-				
-				<p:outputLabel value="Identifiant" for="idLogin" />
-				<p:inputText id= "idLogin" required ="true"  value="#{authenticationBean.login}" />
-				<p:message for="idLogin" />
-				
-				<p:outputLabel value="Mot de passe" for="idMdp" />
-				<p:inputText id= "idMdp" required ="true" value="#{authenticationBean.password}"/>
-				<p:message for="idMdp" />
-				
-				<f:facet name="footer">
-					<p:commandButton action="#{authenticationBean.connecterUtilisateur()}" value="Se connecter"  update="grid"  style="margin-left: 30%;" styleClass="ui-priority-primary"/>
-				</f:facet>
-			
-			
-				<!--============ Affichage des messages globaux===== -->
-	
-		<p:messages  styleClass="error" layout="table" showDetail="true"/>
-			</h:panelGrid>
 		
-		</h:form>
-		
-				<!--============ Affichage des messages globaux===== -->
-	
-		<p:messages  styleClass="error" layout="table" showDetail="true"/>
-	
+			<p:panel header="Formulaire de connexion" id="panel" >
+			
+			<!--============ Affichage des messages globaux===== -->
+		        <p:messages showIcon="false">
+		            <p:autoUpdate />
+		        </p:messages>
+		        <br/>
+				
+				<h:panelGrid  columns="2" cellpadding="10" cellspacing="2" >
+					
+					<p:outputLabel value="Identifiant" for="idLogin" />
+					<p:inputText id="idLogin" required ="true"  value="#{authenticationBean.login}" />
 
+					
+					<p:outputLabel value="Mot de passe" for="idMdp" />
+					<p:inputText id="idMdp" required ="true" value="#{authenticationBean.password}"/>
+
+					
+					<f:facet name="footer">
+						<p:commandButton action="#{authenticationBean.connecterUtilisateur()}" value="Se connecter"  update="panel"  style="margin-left: 30%;" styleClass="ui-priority-primary"/>
+					</f:facet>
+		
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+	
+	</div> <!-- End class main -->
 </body> 
 </html>

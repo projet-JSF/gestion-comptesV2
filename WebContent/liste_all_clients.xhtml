@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body>
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+			
+				
+				
+				<!-- ===========Affichage de la liste de tous clients  =========== -->
+				<!--  Avec le composant jsf h:datatable -->
+				
+				
+				<h2 style="font-family: 'Open Sans', sans-serif;"> Liste de tous clients</h2>
+			
+				<h:form>
+					<p:dataTable value="#{gestionClient.findAllClientsBdd()}" var="client" resizableColumns="true" width="60%" border="1">
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="ID client" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.idClient }" />
+						</p:column>
+					
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Nom" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.nom }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Prenom" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.prenom }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Adresse" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.adresse }" />
+						</p:column>
+						
+									<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Code postal" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.codePostal }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Ville" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.ville }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Telephone" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.telephone }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Conseiller" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{client.conseillerId}" />
+						</p:column>
+
+						
+						<!-- Colonne pour afficher le client -->
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Afficher" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							
+							<!--  Attribut du lien h:commandLink :
+										- action : clé d'outcom pour la navigation (ref faces-config.xml)
+										- actionListener : méthode à invoquer dans le managed bean
+							-->
+							
+							
+							<h:commandLink id="affiche" action="afficheClient" actionListener="#{gestionClient.selectionnerClient}" >
+								
+									<!-- Passage de parametre au composant : nom deleteID / valeur = l'id du client -->
+									<f:param id="afficherID" name="id" value="#{client.idClient}"/>
+									
+									<!--  label du lien  -->
+									<h:outputText value="afficher" />
+							
+							</h:commandLink>
+							
+						</p:column>
+					
+					</p:dataTable>
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition> 
+
+</body> 
+</html>

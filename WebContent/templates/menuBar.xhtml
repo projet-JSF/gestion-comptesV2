@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+
+</h:head> 
+<body> 
+	<ui:composition>
+
+		<h:form>  
+		 
+		    <p:menubar id="stickyMenu">
+		    
+				<p:menuitem value="Accueil" action="accueil"  />
+				
+		        <p:submenu label="Gestion comptes" icon="pi pi-money-bill" style="color : white;">
+		            <p:menuitem value="Voir la liste des comptes" action="listAllComptes" />
+		            <p:menuitem value="Chercher un compte" action="searchCompte" actionListener="#{gestionCompte.findlisteIDComptes}"/>
+		            <p:menuitem value="Ajouter un compte" action="addCompte" actionListener="#{gestionCompte.initialiserCompte}"/>
+					<p:menuitem value="Faire un virement" action="transfert" actionListener="#{gestionCompte.findlisteIDComptes}" />
+		        </p:submenu>
+		 
+		        <p:submenu label="Gestion client" icon="pi pi-money-bill">
+		            <p:menuitem value="Voir la liste des clients" action="listAllClients"/>
+		            <p:menuitem value="Chercher un client" action="searchClient" actionListener="#{gestionClient.findlisteIDClients}" />
+		            <p:menuitem value="Ajouter un client" action="addClient" actionListener="#{gestionClient.initialiserClient}"/>
+		        </p:submenu>
+		 
+		 		<p:submenu label="Gestion conseillers" icon="pi pi-money-bill">
+		            <p:menuitem value="Voir la liste des conseillers" url="#" />
+		            <p:menuitem value="Chercher un conseiller" url="#" />
+		            <p:menuitem value="Ajouter un conseiller" url="#" />
+		        </p:submenu>
+		 
+		 
+		        <f:facet name="options">
+
+						<p:commandButton action="#{authenticationBean.deconnecterUtilisateur}" value="Se deconnecter" />
+
+		        </f:facet>
+		    </p:menubar>
+			<p:sticky target="stickyMenu" />
+		</h:form>
+		
+		
+		
+		
+		
+		
+		
+	</ui:composition>
+</body> 
+</html>

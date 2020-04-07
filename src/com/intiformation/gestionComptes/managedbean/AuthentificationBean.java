@@ -29,7 +29,7 @@ public class AuthentificationBean implements Serializable{
 	private String login = "pierre@gmail.com";
 	private String password = "0000";
 	
-	private Conseiller conseillerlogged;
+	private Conseiller conseillerlogged; /// A mettre dans  gestionConseiller MB
 	
 	//dao
 	

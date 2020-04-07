@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content"> 
+				<br/><br/>
+				<h:form>
+					<p:panel header="Virement compte à compte" id="panel" >
+						<h:panelGrid  id="grid" columns="3" cellpadding="5" cellspacing="5">
+
+							<p:outputLabel for="idCompteDonneur" value="ID compte receveur" />
+							<p:selectOneMenu id="idCompteDonneur" value="#{gestionCompte.idCompteDonneur}" style="width:180px">
+								<f:selectItems value="#{gestionCompte.listeIDCompte}" />
+				       		 </p:selectOneMenu>
+				       		 
+				       		 <br/>
+				       		 
+				       		<p:outputLabel for="idCompteReceveur" value="ID compte receveur" />
+							<p:selectOneMenu id="idCompteReceveur" value="#{gestionCompte.idCompteReceveur}" style="width:180px">
+								<f:selectItems value="#{gestionCompte.listeIDCompte}" />
+				       		</p:selectOneMenu>
+				       		<br/>
+				       		
+				       		<p:outputLabel for="idMontant" value="Montant" />
+				       		<p:inputText id="idMontant" value="#{gestionCompte.montantVirement}" required="true">
+								<f:validateDoubleRange minimum="0" maximum="100000" />
+							</p:inputText>
+							<p:message for="idMontant" />
+				       		 
+							<f:facet name="footer">
+								<p:commandButton update="grid" action="accueil" value="Faire le virement" />
+							</f:facet>
+			
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+	
+		</ui:define>
+	
+	</ui:composition>
+</body> 
+</html>

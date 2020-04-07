@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body>
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+			
+				
+				
+				<!-- ===========Affichage de la liste de tous clients  =========== -->
+				<!--  Avec le composant jsf h:datatable -->
+				
+				
+				<h2 style="font-family: 'Open Sans', sans-serif;"> Liste de tous les comptes</h2>
+			
+				<h:form>
+					<p:dataTable value="#{gestionCompte.findAllComptesBdd()}" var="compte" resizableColumns="true" width="60%" border="1">
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="ID compte" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.idCompte}" />
+						</p:column>
+					
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="ID Client" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.clientID }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Solde" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.solde }" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="TypeCompte" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.typeCompte}" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Taux" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.taux}" />
+						</p:column>
+						
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Decouvert" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{compte.decouvert}" />
+						</p:column>
+					
+					
+						<!-- Colonne pour afficher le compte -->
+									
+						<p:column>
+							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="Afficher" />
+							</f:facet>
+			
+							<!-- Donnée de la colonne -->
+							<h:commandLink id="affiche" action="afficheCompte" actionListener="#{gestionCompte.selectionnerCompte}" >
+											
+									<!-- Passage de parametre au composant : nom deleteID / valeur = l'id du client -->
+									<f:param id="afficherID" name="id" value="#{compte.idCompte}"/>
+											
+									<!--  label du lien  -->
+									<h:outputText value="afficher" />
+										
+							</h:commandLink>
+										
+						</p:column>
+					
+					</p:dataTable>
+			</h:form>
+		
+		</ui:define>
+	
+	</ui:composition> 
+
+</body> 
+</html>

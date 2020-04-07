@@ -2,51 +2,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
 
 <h:head></h:head> 
 <body> 
-<h1>Ajouter Client</h1>
 
-	<h:form>
-	
-		<h:panelGrid columns="2" border="1" cellpadding="5" cellspacing="5">
-		
-			<f:facet name="header">
-				Formulaire d'ajout d'un client
-			</f:facet> 
-			
-			<h:outputLabel for="idIdClient" value="Identifiant" />
-			<h:inputText id="idIdClient" value="#{gestionClient.client.idClient}" />
-			
-			<h:outputLabel for="idNomClient" value="Nom" />
-			<h:inputText id="idNomClient" value="#{gestionClient.client.nom}" />
-			
-			<h:outputLabel for="idPrenomClient" value="Prenom" />
-			<h:inputText id="idPrenomClient" value="#{gestionClient.client.prenom}" />
-			
-			<h:outputLabel for="idAdresseClient" value="Adresse" />
-			<h:inputText id="idAdresseClient" value="#{gestionClient.client.adresse}" />
-			
-			<h:outputLabel for="idCodePostalClient" value="Code postal" />
-			<h:inputText id="idCodePostalClient" value="#{gestionClient.client.codePostal}" />
-			
-			<h:outputLabel for="idVilleClient" value="Ville" />
-			<h:inputText id="idVilleClient" value="#{gestionClient.client.ville}" />
-		
-			<h:outputLabel for="idTelephoneClient" value="Telephone" />
-			<h:inputText id="idTelephoneClient" value="#{gestionClient.client.telephone}" />
-			
-			<h:outputLabel for="idConseillerClient" value="Conseiller" />
-			<h:inputText id="idConseillerClient" value="#{gestionClient.client.conseillerId}" />
-		
-			<f:facet name="footer">
-				<h:commandButton action="listClient" actionListener="#{gestionClient.ajouterClient}" value="Ajouter" />
-			</f:facet>
+	<!-- ============Utilisation du modele layout.xhtml============ -->
 
-		</h:panelGrid>
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
 	
-	</h:form>
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+			<br/><br/>
+				<h:form>
+					<p:panel header="Ajout d'un client" id="panel" >
+						<h:panelGrid  id="grid" columns="3" cellpadding="5" cellspacing="5">
+
+							
+							<p:outputLabel for="idNomClient" value="Nom" />
+							<p:inputText id="idNomClient" value="#{gestionClient.client.nom}"  required="true"/>
+							<p:message for="idNomClient" />
+							
+							<p:outputLabel for="idPrenomClient" value="Prenom" />
+							<p:inputText id="idPrenomClient" value="#{gestionClient.client.prenom}" required="true"/>
+							<p:message for="idPrenomClient" />
+							
+							<p:outputLabel for="idAdresseClient" value="Adresse" />
+							<p:inputText id="idAdresseClient" value="#{gestionClient.client.adresse}" />
+							<p:message for="idAdresseClient" />
+							
+							<p:outputLabel for="idCodePostalClient" value="Code postal" />
+							<p:inputText id="idCodePostalClient" value="#{gestionClient.client.codePostal}">
+								<f:validateDoubleRange minimum="0" maximum="100000" />
+							</p:inputText>
+							<p:message for="idCodePostalClient" />
+							
+							<p:outputLabel for="idVilleClient" value="Ville" />
+							<p:inputText id="idVilleClient" value="#{gestionClient.client.ville}" />
+							<p:message for="idVilleClient" />
+							
+							<p:outputLabel for="idTelephoneClient" value="Telephone" />
+							<p:inputText id="idTelephoneClient" value="#{gestionClient.client.telephone}">
+								<f:validateDoubleRange minimum="0" maximum="10000000000" />
+							</p:inputText>
+							<p:message for="idTelephoneClient" />
+							
+							<p:outputLabel for="idConseiller" value="ID conseiller" />
+							<p:selectOneMenu id="idConseiller" value="#{gestionClient.client.conseillerId}" style="width:180px">
+								<f:selectItems value="#{gestionClient.listeIDConseillers}" />
+				       		 </p:selectOneMenu>
+				       		 
+							<f:facet name="footer">
+								<p:commandButton update="grid" action="accueil" actionListener="#{gestionClient.ajouterClient}" value="Ajouter" />
+							</f:facet>
+				
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+		</ui:define>
 	
+	</ui:composition>
 </body> 
 </html>

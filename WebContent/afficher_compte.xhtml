@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+				<br/> <br/>
+					<h:form>
+						<p:panel header="Affichage compte" id="panel" >
+							<h:panelGrid  id="grid" columns="3" cellpadding="5" cellspacing="5">
+	
+								<p:outputLabel for="idIdCompte" value="ID compte" />
+								<h:outputText id="idIdCompte" value="#{gestionCompte.compte.idCompte}" />
+								<br/>
+								
+								<h:outputLabel for="idIdClient" value="ID client" />
+								<h:outputText id="idIdClient" value="#{gestionCompte.compte.clientID}" />
+								<br/>
+								
+								<h:outputLabel for="idSolde" value="Solde" />
+								<h:outputText id="idSolde" value="#{gestionCompte.compte.solde}" />
+								<br/>
+								
+								<h:outputLabel for="idTypeCompte" value="TypeCompte" />
+								<h:outputText id="idTypeCompte" value="#{gestionCompte.compte.typeCompte}" />
+								<br/>
+								
+								<h:outputLabel for="idTaux" value="Taux" rendered="#{gestionCompte.compte.typeCompte.equals('epargne')}"/>
+								<h:outputText id="idTaux" value="#{gestionCompte.compte.taux}" rendered="#{gestionCompte.compte.typeCompte.equals('epargne')}"/>
+								
+								
+								<h:outputLabel for="idDecouvert" value="Decouvert" rendered="#{gestionCompte.compte.typeCompte.equals('courant')}" />
+								<h:outputText id="idDecouvert" value="#{gestionCompte.compte.decouvert}" rendered="#{gestionCompte.compte.typeCompte.equals('courant')}" />
+						       	<br/>
+						       	
+						       	<h:outputLabel for="idDebit" value="Faire un debit" />
+								<h:inputText id="idDebit" value="#{gestionCompte.montantDebit}"  />
+						       	<p:commandButton action="afficheCompte" value="Debiter" />
+						       	
+						       	<h:outputLabel for="idCredit" value="Faire un credit" />
+								<h:inputText id="idCredit" value="#{gestionCompte.montantCredit}"  />
+						       	<p:commandButton action="afficheCompte" value="Crediter" />
+						       	
+						       	 
+								<f:facet name="footer">
+									<p:commandButton action="editCompte" value="Modifier" />
+									<p:commandButton action="accueil" actionListener="#{gestionCompte.supprimerCompte}" value="Supprimer" />
+<!-- 									<p:commandButton action="afficheClient" value="Afficher le client propriétaire" /> -->
+								
+								</f:facet>
+							</h:panelGrid>
+						</p:panel>
+					</h:form>
+		</ui:define>
+		
+	</ui:composition>
+</body> 
+</html>

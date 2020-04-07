@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<h:outputScript library="scripts" name="jquery-3.4.1.min.js" />
+	<h:outputScript library="scripts" name="scriptAfficheAuClick" />
+</h:head> 
+<body> 
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+				<br/><br/>
+					<h:form>
+						<p:panel header="Affichage Client" id="panel" >
+							<h:panelGrid  id="grid" columns="2" cellpadding="5" cellspacing="5">
+	
+								<p:outputLabel for="idIDClient" value="ID client :" />
+								<h:outputText id="idIDClient" value="#{gestionClient.client.idClient}" />
+					
+								
+								<p:outputLabel for="idNomClient" value="Nom :" />
+								<h:outputText id="idNomClient" value="#{gestionClient.client.nom}"/>
+								
+								
+								<p:outputLabel for="idPrenomClient" value="Prenom :" />
+								<h:outputText id="idPrenomClient" value="#{gestionClient.client.prenom}"/>
+								
+								
+								<p:outputLabel for="idAdresseClient" value="Adresse :" />
+								<h:outputText id="idAdresseClient" value="#{gestionClient.client.adresse}" />
+								
+								
+								<p:outputLabel for="idCodePostalClient" value="Code postal :" />
+								<h:outputText id="idCodePostalClient" value="#{gestionClient.client.codePostal}"/>
+								
+								
+								<p:outputLabel for="idVilleClient" value="Ville :" />
+								<h:outputText id="idVilleClient" value="#{gestionClient.client.ville}" />
+								
+								
+								<p:outputLabel for="idTelephoneClient" value="Telephone :" />
+								<h:outputText id="idTelephoneClient" value="#{gestionClient.client.telephone}"/>
+								
+								
+								<p:outputLabel for="idConseiller" value="ID conseiller :" />
+								<h:outputText id="idConseiller" value="#{gestionClient.client.conseillerId}" />
+					       		 
+					       		 
+							<f:facet name="footer">
+								<p:commandButton action="editClient" value="Modifier" rendered="#{gestionClient.client.conseillerId==authenticationBean.conseillerlogged.idConseiller}"/>
+								<p:commandButton action="accueil" actionListener="#{gestionClient.supprimerClient}" value="Supprimer" rendered="#{gestionClient.client.conseillerId==authenticationBean.conseillerlogged.idConseiller}"/>
+<!-- 								<p:commandButton action="afficheClient" value="Afficher les comptes associés" id="showComptes"/> -->
+							
+							</f:facet>
+				
+							</h:panelGrid>
+						</p:panel>
+					</h:form>
+		
+		
+		<br/><br/>
+		
+		<!-- ============================= Affichage de la liste des comptes =========================== -->
+		
+		
+		<div id="showOnClick">
+			<h:form>
+				<p:dataTable value="#{gestionClient.findlisteComptesDuClient()}" var="compte" resizableColumns="true" width="60%" border="1">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="ID compte" />
+						</f:facet>
+						<h:outputText value="#{compte.idCompte}" />
+					</p:column>
+				
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="ID Client" />
+						</f:facet>
+						<h:outputText value="#{compte.clientID }" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Solde" />
+						</f:facet>
+						<h:outputText value="#{compte.solde }" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="TypeCompte" />
+						</f:facet>
+						<h:outputText value="#{compte.typeCompte}" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Taux" />
+						</f:facet>
+						<h:outputText value="#{compte.taux}" />
+					</p:column>
+					
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Decouvert" />
+						</f:facet>
+						<h:outputText value="#{compte.decouvert}" />
+					</p:column>
+				
+				
+					<!-- Colonne pour afficher le compte -->
+								
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Afficher" />
+						</f:facet>
+						<h:commandLink id="affiche" action="afficheCompte" actionListener="#{gestionCompte.selectionnerCompte}" >
+								<f:param id="afficherID" name="id" value="#{compte.idCompte}"/>
+								<h:outputText value="afficher" />
+						</h:commandLink>
+									
+					</p:column>
+
+				</p:dataTable>
+			</h:form>
+		</div>
+		
+		
+		</ui:define>
+		
+	</ui:composition>
+</body> 
+</html>

@@ -2,45 +2,75 @@
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <application/>
-	<!-- ======== CONFIG DE LA NAVIGATION CLIENTS=================== -->
+	<!-- ======== CONFIG DE LA NAVIGATION =================== -->
  	
- 	<!--  1. regle de navigaation pour la page d'accueil.xhtml -->
+ 	<!--  1. regle de navigation pour la page d'accueil.xhtml -->
  	
  	<navigation-rule>
- 	
- 		<!-- 1.1 page de départ -->
  		<from-view-id>/accueil.xhtml</from-view-id>
- 		
- 		<!-- 1.2 cas de navigation : accueil.xhtml vers accueil.xhtml (suppression) -->
+ 	
  		<navigation-case>
- 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
- 			<from-outcome>listClient</from-outcome>
- 			
- 			<!-- 1.2.2 page de destination -->
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
  		</navigation-case>
  		
- 		
- 		 <!-- 1.3 cas de navigation : accueil.xhtml vers /modifier_client.xhtml (modifier) -->
  		<navigation-case>
- 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
  			<from-outcome>editClient</from-outcome>
- 			
- 			<!-- 1.2.2 page de destination -->
  			<to-view-id>/modifier_client.xhtml</to-view-id>
- 			
  		</navigation-case>
  		
- 		 <!-- 1.4 cas de navigation : accueil.xhtml vers ajouter_client.xhtml (modifier) -->
  		<navigation-case>
- 			<!-- 1.4.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
  			<from-outcome>addClient</from-outcome>
- 			
- 			<!-- 1.4.2 page de destination -->
- 			<to-view-id>/ajouter_client.xhtml</to-view-id>
- 			
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
  		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		
  	</navigation-rule>
  	
  
@@ -48,17 +78,67 @@
  	
  	<navigation-rule>
  	
- 		<!-- 2.1 page de départ -->
  		<from-view-id>/modifier_client.xhtml</from-view-id>
  		
- 		<!-- 2.2 cas de navigation : modifier_client.xhtml vers accueil.xhtml (suppression) -->
  		<navigation-case>
- 			<!-- 2.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
- 			<from-outcome>listClient</from-outcome>
- 			
- 			<!-- 2.2.2 page de destination -->
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
  		
   	</navigation-rule>	
@@ -66,104 +146,698 @@
  	<!--  3. regle de navigation pour la page ajouter_client.xhtml -->
  	
  	<navigation-rule>
- 	
- 		<!-- 3.1 page de départ -->
+
  		<from-view-id>/ajouter_client.xhtml</from-view-id>
  		
- 		<!-- 3.2 cas de navigation : ajouter_client.xhtml vers accueil.xhtml (suppression) -->
- 		<navigation-case>
- 			<!-- 3.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandbutton) -->
- 			<from-outcome>listClient</from-outcome>
- 			
- 			<!-- 3.2.2 page de destination -->
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
  		</navigation-case>	
 
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
  		
  	</navigation-rule>		
- 	
- 	<!-- ======== CONFIG DE LA NAVIGATION COMPTES=================== -->
- 	
- 	<!--  1. regle de navigation pour la page d'accueil.xhtml -->
+
+  	
+  	<!--  4. regle de navigation pour la page afficher_client.xhtml -->
  	
  	<navigation-rule>
  	
- 		<!-- 1.1 page de départ -->
- 		<from-view-id>/accueil.xhtml</from-view-id>
+ 		<from-view-id>/afficher_client.xhtml</from-view-id>
  		
- 		<!-- 1.2 cas de navigation : accueil.xhtml vers accueil.xhtml (suppression) -->
- 		<navigation-case>
- 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
- 			<from-outcome>listCompte</from-outcome>
- 			
- 			<!-- 1.2.2 page de destination -->
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
  		</navigation-case>
  		
- 		
- 		 <!-- 1.3 cas de navigation : accueil.xhtml vers /modifier_compte.xhtml (modifier) -->
  		<navigation-case>
- 			<!-- 1.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
  			<from-outcome>editCompte</from-outcome>
- 			
- 			<!-- 1.2.2 page de destination -->
- 			<to-view-id>/modifier_compte.xhtml</to-view-id>
- 			
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
  		</navigation-case>
  		
- 		 <!-- 1.4 cas de navigation : accueil.xhtml vers ajouter_compte.xhtml (modifier) -->
  		<navigation-case>
- 			<!-- 1.4.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
  			<from-outcome>addCompte</from-outcome>
- 			
- 			<!-- 1.4.2 page de destination -->
- 			<to-view-id>/ajouter_compte.xhtml</to-view-id>
- 			
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
  		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 			
  	</navigation-rule>
  	
- 
-  	<!--  2. regle de navigation pour la page modifier_compte.xhtml -->
+ 	
+   	<!--  5. regle de navigation pour la page chercher_client.xhtml -->
  	
  	<navigation-rule>
- 	
- 		<!-- 2.1 page de départ -->
- 		<from-view-id>/modifier_compte.xhtml</from-view-id>
- 		
- 		<!-- 2.2 cas de navigation : modifier_compte.xhtml vers accueil.xhtml (suppression) -->
- 		<navigation-case>
- 			<!-- 2.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandlink) -->
- 			<from-outcome>listCompte</from-outcome>
- 			
- 			<!-- 2.2.2 page de destination -->
+
+ 		<from-view-id>/chercher_client.xhtml</from-view-id>
+ 		 
+ 		 
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
  		</navigation-case>
  		
-  	</navigation-rule>	
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+
+ 	</navigation-rule>
  	
- 	<!--  3. regle de navigation pour la page ajouter_compte.xhtml -->
+ 	
+ 	
+ 	<!--  6. regle de navigation pour la page liste_all_clients.xhtml -->
  	
  	<navigation-rule>
  	
- 		<!-- 3.1 page de départ -->
- 		<from-view-id>/ajouter_compte.xhtml</from-view-id>
+ 		<from-view-id>/liste_all_clients.xhtml</from-view-id>
  		
- 		<!-- 3.2 cas de navigation : ajouter_compte.xhtml vers accueil.xhtml (suppression) -->
- 		<navigation-case>
- 			<!-- 3.2.1 clé d'outcom (valeur de l'attribut 'action' de h:commandbutton) -->
- 			<from-outcome>listCompte</from-outcome>
- 			
- 			<!-- 3.2.2 page de destination -->
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
  			<to-view-id>/accueil.xhtml</to-view-id>
- 			
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
  		</navigation-case>	
 
- 		
- 	</navigation-rule>		
 
- 
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+ 	
+ 	<!--  7. regle de navigation pour la page afficher_compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/afficher_compte.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+  	<!--  8. regle de navigation pour la page ajouter-compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/ajouter-compte.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+  	<!--  9. regle de navigation pour la page chercher_compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/chercher_compte.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+  	<!--  10. regle de navigation pour la page liste_all_comptes.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/liste_all_comptes.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+ 	 	<!--  11. regle de navigation pour la page modifier-compte.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/modifier-compte.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
+ 	
+ 	
+ <!--  12. regle de navigation pour la page virement.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/virement.xhtml</from-view-id>
+ 		
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 	</navigation-rule>
 </faces-config>
 

@@ -2,42 +2,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
 
 <h:head></h:head> 
 <body> 
-<h1>Ajouter Compte</h1>
 
-	<h:form>
-	
-		<h:panelGrid columns="2" border="1" cellpadding="5" cellspacing="5">
-		
-			<f:facet name="header">
-				Formulaire d'ajout d'un compte
-			</f:facet> 
-			
-			<h:outputLabel for="idIdClient" value="Identifiant" />
-			<h:inputText id="idIdClient" value="#{gestionCompte.compte.idClient}" />
-			
-			<h:outputLabel for="idSolde" value="Solde" />
-			<h:inputText id="idSolde" value="#{gestionCompte.compte.solde}" />
-			
-			<h:outputLabel for="idTtypeCompte" value="TypeCompte" />
-			<h:inputText id="idTypeCompte" value="#{gestionCompte.compte.type_compte}" />
-			
-			<h:outputLabel for="idTaux" value="Taux" />
-			<h:inputText id="idTaux" value="#{gestionCompte.compte.taux}" />
-			
-			<h:outputLabel for="idDecouvert" value="Decouvert" />
-			<h:inputText id="idDecouvert" value="#{gestionCompte.compte.decouvert}" />
-			
-			<f:facet name="footer">
-				<h:commandButton action="listCompte" actionListener="#{gestionCompte.ajouterCompte}" value="Ajouter" />
-			</f:facet>
+	<!-- ============Utilisation du modele layout.xhtml============ -->
 
-		</h:panelGrid>
-	
-	</h:form>
-	
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+				<br/><br/>
+				<h:form>
+					<p:panel header="Ajout d'un compte" id="panel" >
+						<h:panelGrid id="grid" columns="3" cellpadding="5" cellspacing="5">
+							
+							<p:outputLabel for="idIdClient" value="Identifiant du client" />
+							<p:selectOneMenu id="idIdClient" value="#{gestionCompte.compte.clientID}" style="width:180px">
+								<f:selectItems value="#{gestionCompte.listeIDClient}" />
+				       		 </p:selectOneMenu>
+							<p:message for="idIdClient" />
+							
+							<p:outputLabel for="idSolde" value="Solde" required="true"/>
+							<p:inputText id="idSolde" value="#{gestionCompte.compte.solde}" />
+							<p:message for="idSolde" />
+							
+							<p:outputLabel for="idTypeCompte" value="Type de compte" />
+							<p:selectOneMenu id="idTypeCompte" value="#{gestionCompte.compte.typeCompte}" style="width:180px" required="true">
+								<f:selectItem itemLabel="     --  Choisir  --" itemValue="#{null}"  />
+								<f:selectItem itemLabel="Courant" itemValue="courant"  />
+								<f:selectItem itemLabel="Epargne" itemValue="epargne"  />
+								<f:ajax render="ajaxTarget1" />
+								<f:ajax render="ajaxTarget2" />
+				       		 </p:selectOneMenu>
+							<p:message for="idTypeCompte" />
+							
+							<p:outputPanel id="ajaxTarget1">
+								<p:outputLabel for="idTaux" value="Taux" rendered="#{gestionCompte.compte.typeCompte=='epargne'}" />
+								<p:outputLabel for="idDecouvert" value="Decouvert" rendered="#{gestionCompte.compte.typeCompte=='courant'}"/>
+							</p:outputPanel>
+							
+							<p:outputPanel id="ajaxTarget2">
+								<p:inputText id="idTaux" value="#{gestionCompte.compte.taux}" rendered="#{gestionCompte.compte.typeCompte=='epargne'}"/>
+								<p:inputText id="idDecouvert" value="#{gestionCompte.compte.decouvert}" rendered="#{gestionCompte.compte.typeCompte=='courant'}"/>
+							</p:outputPanel>			
+							
+							
+							<f:facet name="footer">
+								<p:commandButton update="grid" action="accueil" actionListener="#{gestionCompte.ajouterCompte}" value="Ajouter" />
+							</f:facet>
+				
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+		</ui:define>
+	</ui:composition>	
 </body> 
 </html>
