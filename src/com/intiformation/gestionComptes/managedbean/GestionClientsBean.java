@@ -42,6 +42,8 @@ public class GestionClientsBean implements Serializable{
 	private List<Integer> listeIDConseillers;
 	private List<Integer> listeIDClient;
 	private List<Compte> listeComptesDuClient;
+	
+	
 	//dao du client
 	IClientDAO clientDAO;
 	
@@ -201,6 +203,7 @@ public class GestionClientsBean implements Serializable{
 		System.out.println("Je suis dans supprimerClient du MB de Client");
 		
 		System.out.println(getClient().toString());
+		
 		//2. recup de l'id du client à supprimer
 		int clientID = client.getIdClient();
 		System.out.println("Id du client à supprimer :"+ clientID);
@@ -336,7 +339,7 @@ public class GestionClientsBean implements Serializable{
 		//3. recup du client dans la bdd par l'id
 		Client clientEdit = clientDAO.getClientByID(clientID);
 			
-		//4. affectation du client à modifier à la prop client du managedbean
+		//4. affectation du client à modifier à la prop clientEdit du managedbean
 		setClient(clientEdit);
 		setListeIDConseillers(conseillerDAO.getAllIDConseillers());
 
@@ -425,7 +428,7 @@ public class GestionClientsBean implements Serializable{
 		//Ajout du client dans la bdd
 		//-> les infos du nouveau client ont été stocké dans l'objet client du managed bean au moment d'envoyer le formulaire
 		
-		//On test si l'ajout à reussit
+		//On test si l'ajout a reussit
 		
 		if(clientDAO.ajouterClient(client)) {
 			//-----------------AJOUT OK-------------------

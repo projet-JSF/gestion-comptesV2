@@ -152,7 +152,7 @@ h1{
     		<h4 style="font-family: 'Open Sans', sans-serif;"> Liste des comptes</h4>
 
 			<h:form>
-				<p:dataTable value="#{gestionCompte.findAllComptesBdd()}" var="compte" resizableColumns="true" width="60%" border="1">
+				<p:dataTable value="#{gestionCompte.findComptesDuConseiller(authenticationBean.conseillerlogged.idConseiller)}" var="compte" resizableColumns="true" width="60%" border="1">
 					<p:column>
 						<!-- En tete de la colonne -->
 						<f:facet name="header">

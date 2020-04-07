@@ -44,24 +44,29 @@
 								<h:outputText id="idDecouvert" value="#{gestionCompte.compte.decouvert}" rendered="#{gestionCompte.compte.typeCompte.equals('courant')}" />
 						       	<br/>
 						       	
-						       	<h:outputLabel for="idDebit" value="Faire un debit" />
-								<h:inputText id="idDebit" value="#{gestionCompte.montantDebit}"  />
-						       	<p:commandButton action="afficheCompte" value="Debiter" />
+						       	<h:outputLabel for="idDebit" value="Faire un debit" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+								<h:inputText id="idDebit" value="#{gestionCompte.montantDebit}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}" />
+						       	<p:commandButton update="grid" action="afficheCompte" value="Debiter" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 						       	
-						       	<h:outputLabel for="idCredit" value="Faire un credit" />
-								<h:inputText id="idCredit" value="#{gestionCompte.montantCredit}"  />
-						       	<p:commandButton action="afficheCompte" value="Crediter" />
+						       	<h:outputLabel for="idCredit" value="Faire un credit" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+								<h:inputText  value="#{gestionCompte.montantCredit}"  rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+						       	<p:commandButton update="grid" action="afficheCompte" value="Crediter" actionListener="#{gestionCompte.creditCompte}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}" />
 						       	
 						       	 
 								<f:facet name="footer">
-									<p:commandButton action="editCompte" value="Modifier" />
-									<p:commandButton action="accueil" actionListener="#{gestionCompte.supprimerCompte}" value="Supprimer" />
-<!-- 									<p:commandButton action="afficheClient" value="Afficher le client propriétaire" /> -->
-								
+									<p:commandButton action="editCompte" value="Modifier" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+									<p:commandButton action="accueil" actionListener="#{gestionCompte.supprimerCompte}" value="Supprimer" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>								
 								</f:facet>
 							</h:panelGrid>
 						</p:panel>
 					</h:form>
+					
+					
+			<!-- =========Affichage des messages ==================== -->
+			
+			<p:messages id="messages" showDetail="true" closable="true">
+        		<p:autoUpdate />
+    		</p:messages>
 		</ui:define>
 		
 	</ui:composition>

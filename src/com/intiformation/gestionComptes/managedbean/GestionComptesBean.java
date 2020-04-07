@@ -1,6 +1,7 @@
 package com.intiformation.gestionComptes.managedbean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -39,8 +40,11 @@ public class GestionComptesBean implements Serializable{
 	
 	//autres props utils aux differentes fonctions
 	private int idCompteSelectionner;
+	
 	private List<Integer> listeIDCompte;
 	private List<Integer> listeIDClient;
+	
+	private List<Compte> listeComptesDuConseillerLogged;
 
 	//Props pour le virement
 	private int idCompteReceveur;
@@ -193,6 +197,16 @@ public class GestionComptesBean implements Serializable{
 	}
 
 
+	public List<Compte> getListeComptesDuConseillerLogged() {
+		return listeComptesDuConseillerLogged;
+	}
+
+
+	public void setListeComptesDuConseillerLogged(List<Compte> listeComptesDuConseillerLogged) {
+		this.listeComptesDuConseillerLogged = listeComptesDuConseillerLogged;
+	}
+
+
 	public IConseillerDAO getConseillerDAO() {
 		return conseillerDAO;
 	}
@@ -226,30 +240,26 @@ public class GestionComptesBean implements Serializable{
 /*====================================================================================================*/	
 
 	
-	
-	
-	
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////://///////*/
-/*////////Il faut ajouter la methode getComptesduConseiller(idConseiller) dans la dao des comptes ou des conseillers /////////////////////////////////////////////////*/	
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////://////////////////////////*/	
-	
-	
-	
-	
-	
-	
-//	/**
-//	 * Recupere la liste des comptes appartenant au conseiller enregistré via la dao. <br/>
-//	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-//	 * @return
-//	 */
-//	public List<Compte> findComptesDuConseiller(int idConseiller){
-//		System.out.println("Je suis dans findComptesDuConseiller du MB de Compte");
-//		
-//		listeComptesBDD=conseillerDAO.getComptesduConseiller(idConseiller);
-//
-//		return listeComptesBDD;
-//	}//end findComptesDuConseiller
+	/**
+	 * Recupere la liste des comptes appartenant au conseiller enregistré via la dao. <br/>
+	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
+	 * @return
+	 */
+	public List<Compte> findComptesDuConseiller(int idConseiller){
+		System.out.println("Je suis dans findComptesDuConseiller du MB de Compte");
+		List<Client> listeClientsduConseiller=conseillerDAO.getClientsduConseiller(idConseiller);
+
+		
+		List<Compte> listeCompteDuClient = new ArrayList<>();
+		listeComptesDuConseillerLogged= new ArrayList<>();
+		for(Client client : listeClientsduConseiller) {
+			listeCompteDuClient=compteDAO.getCompteByIDClient(client.getIdClient());
+		}
+		
+		System.out.println(listeComptesDuConseillerLogged);
+		
+		return listeComptesDuConseillerLogged;
+	}//end findComptesDuConseiller
 
 /*====================================================================================================*/	
 /*==supprimerCompte=================================================================================*/
@@ -537,6 +547,72 @@ public class GestionComptesBean implements Serializable{
 
 	}//end findlisteIDComptes	
 	
+/*====================================================================================================*/	
+/*==creditCompte====================================================================================*/
+/*====================================================================================================*/
+		
+	/**
+	 * Permet d'effectuer un depot sur un compte, au click du bouton 'Créditer' de la page 'afficher_compte.xhtml'
+	 * @param event
+	 */
+	public void creditCompte (ActionEvent event) {
+		System.out.println("Je suis dans creditCompte du MB de Compte");
+			
+		// Récuperation du context jsp
+		FacesContext contextJSF = FacesContext.getCurrentInstance();
+			
+		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde
+					//+ ajout du montant
+		//La propriété montantCredit renseigne le montant à crediter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
+		
+		
+		//On test si le credit s'est bien passé
+					
+		if(compteDAO.deposit(compte, montantCredit)) {
+			//------------- DEPOT OK--------------------
+			//Envoie d'un message de réussite
+			System.out.println("Le dépôt est un succès");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+														"Dépôt effectué",
+														"Le compte a été modifier avec succès"));
+			
+
+			setCompte(compteDAO.getCompteByID(compte.getIdCompte())); //On met à jour l'objet compte 
+			setMontantCredit(0); //on remet le montant de credit à 0
+						
+		}else {
+			//-------------DEPOT NOT OK--------------------------
+			//Envoie d'un message d'echec
+			System.out.println("Le dépôt est un echec");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+															"Echec du dépôt", 
+															"La modification n'a pas été effectué"));
+		}//end else
+					
+	}//end creditCompte
+
 	
-	
+
+/*====================================================================================================*/	
+/*==findComptesDuConseiller=================================================================================*/
+/*====================================================================================================*/	
+
+		
+	/**
+	 * Recupere la liste des comptes appartenant au conseiller enregistré via la dao. <br/>
+	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
+	 * @return
+	 */
+	public int findConseillerduCompte(int idCompte){
+		System.out.println("Je suis dans findConseillerduCompte du MB de Compte");
+		
+		int IDclient = compteDAO.getCompteByID(idCompte).getClientID();
+		
+		Client client = clientDAO.getClientByID(IDclient);
+		
+		int idConseiller = client.getConseillerId();
+				
+		return idConseiller;
+	}//end findComptesDuConseiller
+
 }//end class
