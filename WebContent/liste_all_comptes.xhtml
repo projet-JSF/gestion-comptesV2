@@ -26,57 +26,53 @@
 			
 				<h:form>
 					<p:dataTable value="#{gestionCompte.findAllComptesBdd()}" var="compte" resizableColumns="true" width="60%" border="1">
+						
 						<p:column>
-							<!-- En tete de la colonne -->
+							<f:facet name="header">
+								<h:outputText value="ID conseiller" />
+							</f:facet>
+							<h:outputText value="#{gestionCompte.findConseillerduCompte(compte.idCompte)}" />
+						</p:column>
+						
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="ID compte" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.idCompte}" />
 						</p:column>
 					
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="ID Client" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.clientID }" />
 						</p:column>
 						
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="Solde" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.solde }" />
 						</p:column>
 						
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="TypeCompte" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.typeCompte}" />
 						</p:column>
 						
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="Taux" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.taux}" />
 						</p:column>
 						
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="Decouvert" />
 							</f:facet>
-							<!-- Donnée de la colonne -->
 							<h:outputText value="#{compte.decouvert}" />
 						</p:column>
 					
@@ -84,12 +80,11 @@
 						<!-- Colonne pour afficher le compte -->
 									
 						<p:column>
-							<!-- En tete de la colonne -->
 							<f:facet name="header">
 								<h:outputText value="Afficher" />
 							</f:facet>
 			
-							<!-- Donnée de la colonne -->
+							
 							<h:commandLink id="affiche" action="afficheCompte" actionListener="#{gestionCompte.selectionnerCompte}" >
 											
 									<!-- Passage de parametre au composant : nom deleteID / valeur = l'id du client -->

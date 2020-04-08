@@ -46,7 +46,7 @@
 						       	
 						       	<h:outputLabel for="idDebit" value="Faire un debit" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 								<h:inputText id="idDebit" value="#{gestionCompte.montantDebit}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}" />
-						       	<p:commandButton update="grid" action="afficheCompte" value="Debiter" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+						       	<p:commandButton update="grid" action="afficheCompte" value="Debiter" actionListener="#{gestionCompte.debitCompte}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 						       	
 						       	<h:outputLabel for="idCredit" value="Faire un credit" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 								<h:inputText  value="#{gestionCompte.montantCredit}"  rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>

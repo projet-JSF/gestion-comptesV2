@@ -248,15 +248,17 @@ public class GestionComptesBean implements Serializable{
 	public List<Compte> findComptesDuConseiller(int idConseiller){
 		System.out.println("Je suis dans findComptesDuConseiller du MB de Compte");
 		List<Client> listeClientsduConseiller=conseillerDAO.getClientsduConseiller(idConseiller);
-
-		
+	
 		List<Compte> listeCompteDuClient = new ArrayList<>();
 		listeComptesDuConseillerLogged= new ArrayList<>();
-		for(Client client : listeClientsduConseiller) {
-			listeCompteDuClient=compteDAO.getCompteByIDClient(client.getIdClient());
-		}
 		
-		System.out.println(listeComptesDuConseillerLogged);
+		
+		for(Client client : listeClientsduConseiller) {
+			
+			listeCompteDuClient=compteDAO.getCompteByIDClient(client.getIdClient());
+			listeComptesDuConseillerLogged.addAll(listeCompteDuClient);
+		}
+
 		
 		return listeComptesDuConseillerLogged;
 	}//end findComptesDuConseiller
@@ -617,99 +619,102 @@ public class GestionComptesBean implements Serializable{
 
 	
 	
-	/*====================================================================================================*/	
-	/*==debitCompte====================================================================================*/
-	/*====================================================================================================*/
+/*====================================================================================================*/	
+/*==debitCompte====================================================================================*/
+/*====================================================================================================*/
 			
-		/**
-		 * Permet d'effectuer un retrait sur un compteDonneur et un ajout sur un compteReceveur, au click du bouton 'Débiter' de la page 'afficher_compte.xhtml'
-		 * @param event
-		 */
-		public void debitCompte (ActionEvent event) {
-			System.out.println("Je suis dans debitCompte du MB de Compte");
+	/**
+	* Permet d'effectuer un retrait sur un compteDonneur et un ajout sur un compteReceveur, au click du bouton 'Débiter' de la page 'afficher_compte.xhtml'
+	* @param event
+	*/
+	public void debitCompte (ActionEvent event) {
+		System.out.println("Je suis dans debitCompte du MB de Compte");
 				
-			// Récuperation du context jsp
-			FacesContext contextJSF = FacesContext.getCurrentInstance();
+		// Récuperation du context jsp
+		FacesContext contextJSF = FacesContext.getCurrentInstance();
 				
-			//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde 
+		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde 
 						//+ retrait du montant 
-			//La propriété montantDebit renseigne le montant à débiter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
-			// la propriété montantDebit renseigne respectivement le montant à débiter du compte.
+		//La propriété montantDebit renseigne le montant à débiter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
+		// la propriété montantDebit renseigne respectivement le montant à débiter du compte.
 			
 			
-			//On test si le debit s'est bien passé
+		//On test si le debit s'est bien passé
 			
-			if(compteDAO.withdraw(compte, montantDebit)) {
-				//------------- DEPOT OK--------------------
-				//Envoie d'un message de réussite
-				System.out.println("Le retrait a été effectué avec succès");
-				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-															"Retrait effectué",
-															"Le compte a été modifier avec succès"));
+		if(compteDAO.withdraw(compte, montantDebit)) {
+			//------------- DEPOT OK--------------------
+			//Envoie d'un message de réussite
+			System.out.println("Le retrait a été effectué avec succès");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+														"Retrait effectué",
+														"Le compte a été modifier avec succès"));
 				
 
-				setCompte(compteDAO.getCompteByID(compte.getIdCompte())); //On met à jour l'objet compte 
-				setMontantDebit(0); //on remet le montant de credit à 0
+			setCompte(compteDAO.getCompteByID(compte.getIdCompte())); //On met à jour l'objet compte 
+			setMontantDebit(0); //on remet le montant de credit à 0
 							
-			}else {
-				//-------------DEPOT NOT OK--------------------------
-				//Envoie d'un message d'echec
-				System.out.println("Le retrait n'a pas été effectué.");
-				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+		}else {
+			//-------------DEPOT NOT OK--------------------------
+			//Envoie d'un message d'echec
+			System.out.println("Le retrait n'a pas été effectué.");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
 																"Echec du retrait", 
 																"La modification n'a pas été effectué"));
-			}//end else
+		}//end else
 			
-		}//end debitCompte
+	}//end debitCompte
 		
 		
-		/*====================================================================================================*/	
-		/*==virementCompte====================================================================================*/
-		/*====================================================================================================*/
+/*====================================================================================================*/	
+/*==virementCompte====================================================================================*/
+/*====================================================================================================*/
 				
-			/**
-			 * Permet d'effectuer un virement d'un compte donneur à un compte receveur, au click du bouton 'Virement' de la page 'virement_compte.xhtml'
-			 * @param event
-			 */
-			public void virementCompte (ActionEvent event) {
-				System.out.println("Je suis dans virementCompte du MB de Compte");
+	/**
+	* Permet d'effectuer un virement d'un compte donneur à un compte receveur, au click du bouton 'Virement' de la page 'virement_compte.xhtml'
+	* @param event
+	*/
+	public void virementCompte (ActionEvent event) {
+		System.out.println("Je suis dans virementCompte du MB de Compte");
 					
-				// Récuperation du context jsp
-				FacesContext contextJSF = FacesContext.getCurrentInstance();
+		// Récuperation du context jsp
+		FacesContext contextJSF = FacesContext.getCurrentInstance();
 					
-				//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde des 2 comptes
-				//+ retrait du montant 
-	//La propriété montant renseigne le montant à transférer. Il est renseigné par le champ du formulaire de la page virement_compte.xhtml
-	// les propriétés idCompteDonneur et idCompteReceveur renseigne respectivement les compte à débiter et à créditer.
+		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde des 2 comptes
+						//+ retrait du montant 
+		//La propriété montant renseigne le montant à transférer. Il est renseigné par le champ du formulaire de la page virement_compte.xhtml
+		// les propriétés idCompteDonneur et idCompteReceveur renseigne respectivement les id des comptes à débiter et à créditer.
+				
+		Compte compteDonneur = compteDAO.getCompteByID(idCompteDonneur);  //on recupere les comptes par leur ID
+		Compte compteReceveur = compteDAO.getCompteByID(idCompteReceveur);
 				
 				
-				//On test si le transfère s'est bien passé
-				if(compteDAO.transfert(compteDonneur,compteReceveur,montant)) {
-					//------------- TRANSFERT OK--------------------
-					//Envoie d'un message de réussite
-					System.out.println("Le transfère a été effectué avec succès");
-					contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-																"Débit effectué",
-																"Le compte débiteur a été modifier avec succès"));
+		//On test si le transfère s'est bien passé
+		if(compteDAO.transfert(compteDonneur,compteReceveur, montantVirement)) {
 					
-					contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-							"Crédit effectué",
-							"Le compte receveur a été modifier avec succès"));
+			//------------- TRANSFERT OK--------------------
+			//Envoie d'un message de réussite
+			System.out.println("Le transfère a été effectué avec succès");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+														"Débit effectué",
+														"Le compte débiteur a été modifier avec succès"));
+					
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+														"Crédit effectué",
+														"Le compte receveur a été modifier avec succès"));
 					
 
-					setCompteDonneur(compteDAO.getCompteByID(compteDonneur.getIdCompte())); //On met à jour l'objet compteDonneur
-					setCompteReceveur(compteDAO.getCompteByID(compteReceveur.getIdCompte())); //On met à jour l'objet compteReceveur
-					setMontant(0); //on remet le montant à 0
+			setMontantVirement(0);//on remet le montant à 0
 								
-				}else {
-					//-------------TRANSFERT NOT OK--------------------------
-					//Envoie d'un message d'echec
-					System.out.println("Le transfère n'a pas été effectué.");
-					contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+		}else {
+					
+			//-------------TRANSFERT NOT OK--------------------------
+			//Envoie d'un message d'echec
+			System.out.println("Le transfère n'a pas été effectué.");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
 																	"Echec du transfère", 
 																	"Les modifications n'ont pas été effectué"));
-				}//end else
+		}//end else
 							
 							
-			}//end virementCompte
+	}//end virementCompte
 }//end class

@@ -41,7 +41,7 @@
 							<p:message for="idMontant" />
 				       		 
 							<f:facet name="footer">
-								<p:commandButton update="grid" action="accueil" value="Faire le virement" />
+								<p:commandButton update="grid" action="accueil" value="Faire le virement" actionListener="#{gestionCompte.virementCompte}"/>
 							</f:facet>
 			
 						</h:panelGrid>
