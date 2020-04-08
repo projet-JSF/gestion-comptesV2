@@ -59,8 +59,14 @@
 								<p:commandButton action="editClient" value="Modifier" rendered="#{gestionClient.client.conseillerId==authenticationBean.conseillerlogged.idConseiller}"/>
 								<p:commandButton action="accueil" actionListener="#{gestionClient.supprimerClient}" value="Supprimer" rendered="#{gestionClient.client.conseillerId==authenticationBean.conseillerlogged.idConseiller}"/>
 <!-- 								<p:commandButton action="afficheClient" value="Afficher les comptes associés" id="showComptes"/> -->
-							
+								
+								<!-- =========Affichage des messages ==================== -->
+
+								<p:messages id="messages" showDetail="true" closable="true">
+					        		<p:autoUpdate />
+					    		</p:messages>
 							</f:facet>
+								
 				
 							</h:panelGrid>
 						</p:panel>

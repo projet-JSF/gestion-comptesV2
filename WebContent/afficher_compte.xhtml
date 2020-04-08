@@ -56,7 +56,18 @@
 								<f:facet name="footer">
 									<p:commandButton action="editCompte" value="Modifier" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 									<p:commandButton action="accueil" actionListener="#{gestionCompte.supprimerCompte}" value="Supprimer" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>								
+									
+									<!-- =========Affichage des messages ==================== -->
+			
+									<p:messages id="messages" showDetail="true" closable="true">
+						        		<p:autoUpdate />
+						    		</p:messages>
+								
+								
 								</f:facet>
+								
+
+					    		
 							</h:panelGrid>
 						</p:panel>
 					</h:form>
