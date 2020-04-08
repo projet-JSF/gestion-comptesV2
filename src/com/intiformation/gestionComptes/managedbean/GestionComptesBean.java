@@ -638,29 +638,51 @@ public class GestionComptesBean implements Serializable{
 		//La propriété montantDebit renseigne le montant à débiter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
 		// la propriété montantDebit renseigne respectivement le montant à débiter du compte.
 			
+		
+		//On vérifie si la somme débiter est disponible sur le compte : montantDebit <= solde du compte = autorisation
+		double montantmaximum;
+		if(compte.getTypeCompte().equals("courant")) {
+			montantmaximum=compte.getSolde()+compte.getDecouvert();
 			
-		//On test si le debit s'est bien passé
-			
-		if(compteDAO.withdraw(compte, montantDebit)) {
-			//------------- DEPOT OK--------------------
-			//Envoie d'un message de réussite
-			System.out.println("Le retrait a été effectué avec succès");
-			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-														"Retrait effectué",
-														"Le compte a été modifier avec succès"));
-				
-
-			setCompte(compteDAO.getCompteByID(compte.getIdCompte())); //On met à jour l'objet compte 
-			setMontantDebit(0); //on remet le montant de credit à 0
-							
 		}else {
-			//-------------DEPOT NOT OK--------------------------
-			//Envoie d'un message d'echec
-			System.out.println("Le retrait n'a pas été effectué.");
-			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
-																"Echec du retrait", 
-																"La modification n'a pas été effectué"));
+			montantmaximum=compte.getSolde();
 		}//end else
+		
+		if (montantDebit <= montantmaximum) {
+			//Si condition valide
+			System.out.println("Le retrait est autorisé.");
+			
+			//On test si le debit s'est bien passé
+			if(compteDAO.withdraw(compte, montantDebit)) {
+				//------------- DEPOT OK--------------------
+				//Envoie d'un message de réussite
+				System.out.println("Le retrait a été effectué avec succès");
+				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+															"Retrait effectué",
+															"Le compte a été modifier avec succès"));
+					
+	
+				setCompte(compteDAO.getCompteByID(compte.getIdCompte())); //On met à jour l'objet compte 
+				setMontantDebit(0); //on remet le montant de credit à 0
+								
+			}else {
+				//-------------DEPOT NOT OK--------------------------
+				//Envoie d'un message d'echec
+				System.out.println("Le retrait n'a pas été effectué.");
+				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+																	"Echec du retrait", 
+																	"La modification n'a pas été effectué"));
+			}//end else
+		}else {
+			//condition non validée
+			System.out.println("Le retrait n'a pas été autorisé.");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+																"Retrait refusé", 
+																"Solde insuffisant"));
+			
+		}//end else
+		
+
 			
 	}//end debitCompte
 		
