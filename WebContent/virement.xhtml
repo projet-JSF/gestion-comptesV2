@@ -19,29 +19,56 @@
 				<br/><br/>
 				<h:form>
 					<p:panel header="Virement compte à compte" id="panel" >
-						<h:panelGrid  id="grid" columns="3" cellpadding="5" cellspacing="5">
+						<h:panelGrid  id="grid" columns="6" cellpadding="5" cellspacing="5">
 
-							<p:outputLabel for="idCompteDonneur" value="ID compte receveur" />
+							<p:outputLabel for="idCompteDonneur" value="ID compte donneur" />
 							<p:selectOneMenu id="idCompteDonneur" value="#{gestionCompte.idCompteDonneur}" style="width:180px">
+								<f:selectItem itemLabel="Select One Item"/>
 								<f:selectItems value="#{gestionCompte.listeIDCompte}" />
+								<p:ajax event="itemSelect" update="grid"/>
 				       		 </p:selectOneMenu>
 				       		 
-				       		 <br/>
+				       		 <p:outputLabel for="idSoldeDonneur" value="Solde :" rendered="#{gestionCompte.idCompteDonneur!=0}" />
+				       		 <h:outputText id="idSoldeDonneur" value="#{gestionCompte.findCompteByID(gestionCompte.idCompteDonneur).solde }" rendered="#{gestionCompte.idCompteDonneur!=0}"  />
+				       		 
+				       		 <p:outputLabel for="idDecouvertDonneur" value="Decouvert :" rendered="#{gestionCompte.idCompteDonneur!=0}" />
+				       		 <h:outputText id="idDecouvertDonneur" value="#{gestionCompte.findCompteByID(gestionCompte.idCompteDonneur).decouvert }" rendered="#{gestionCompte.idCompteDonneur!=0}"  />
+				       		
+				
 				       		 
 				       		<p:outputLabel for="idCompteReceveur" value="ID compte receveur" />
 							<p:selectOneMenu id="idCompteReceveur" value="#{gestionCompte.idCompteReceveur}" style="width:180px">
+								<f:selectItem itemLabel="Select One Item"/>
 								<f:selectItems value="#{gestionCompte.listeIDCompte}" />
+								<p:ajax event="itemSelect" update="grid"/>
 				       		</p:selectOneMenu>
+				       		
+				       		<p:outputLabel for="idSoldeReceveur" value="Solde :" rendered="#{gestionCompte.idCompteReceveur!=0}" />
+				       		<h:outputText id="idSoldeReceveur" value="#{gestionCompte.findCompteByID(gestionCompte.idCompteReceveur).solde }" rendered="#{gestionCompte.idCompteReceveur!=0}"/>
+				       		 
+				       		<p:message for="idSoldeReceveur" />
 				       		<br/>
 				       		
+				
 				       		<p:outputLabel for="idMontant" value="Montant" />
 				       		<p:inputText id="idMontant" value="#{gestionCompte.montantVirement}" required="true">
 								<f:validateDoubleRange minimum="0" maximum="100000" />
 							</p:inputText>
 							<p:message for="idMontant" />
-				       		 
+				       		
+				       		<br/>
+				       		<br/>
+				       		<br/>
+
 							<f:facet name="footer">
-								<p:commandButton update="grid" action="accueil" value="Faire le virement" actionListener="#{gestionCompte.virementCompte}"/>
+								<p:commandButton update="grid" action="transfert" value="Faire le virement" actionListener="#{gestionCompte.virementCompte}"/>
+								<!-- =========Affichage des messages ==================== -->
+			
+									<p:messages id="messages" showDetail="true" closable="true">
+						        		<p:autoUpdate />
+						    		</p:messages>
+							
+							
 							</f:facet>
 			
 						</h:panelGrid>

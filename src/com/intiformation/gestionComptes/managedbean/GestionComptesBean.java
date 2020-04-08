@@ -219,6 +219,22 @@ public class GestionComptesBean implements Serializable{
 	/*=========================METHODES=========================*/
 	
 /*====================================================================================================*/	
+/*==findCompteByID=================================================================================*/
+/*====================================================================================================*/	
+		
+	/**
+	 * Recupere un compte par son id via la dao. <br/>
+	 * @return compte
+	 */
+	public Compte findCompteByID(int idCompte){
+		System.out.println("Je suis dans findCompteByID du MB de Compte");
+		System.out.println("idCompte : "+idCompte);
+		
+		Compte compte=compteDAO.getCompteByID(idCompte);
+
+		return compte;
+	}//end findCompteByID	
+/*====================================================================================================*/	
 /*==findAllComptesBdd=================================================================================*/
 /*====================================================================================================*/	
 	
@@ -247,17 +263,30 @@ public class GestionComptesBean implements Serializable{
 	 */
 	public List<Compte> findComptesDuConseiller(int idConseiller){
 		System.out.println("Je suis dans findComptesDuConseiller du MB de Compte");
+		
+		//1. On recupere la liste des clients appartenant au conseiller par l'id du conseiller (parametre de la méthode)
 		List<Client> listeClientsduConseiller=conseillerDAO.getClientsduConseiller(idConseiller);
 	
-		List<Compte> listeCompteDuClient = new ArrayList<>();
+		//2. Intitalisation de la liste des comptes du conseiller
 		listeComptesDuConseillerLogged= new ArrayList<>();
 		
+		//3. Initialisation d'une liste de comptes appartenant à 1 client
+		List<Compte> listeCompteDuClient = new ArrayList<>();
+		
+		//4. On parcourt la liste des clients du conseiller
 		
 		for(Client client : listeClientsduConseiller) {
 			
-			listeCompteDuClient=compteDAO.getCompteByIDClient(client.getIdClient());
+			//Pour chaque client du conseiller, on recupere son identifiant
+			int idClient =client.getIdClient();
+			
+			//Puis la liste de ses comptes (par son identifiant)
+			listeCompteDuClient=compteDAO.getCompteByIDClient(idClient);
+			
+			//On fusionne la liste des comptes du client à la liste des comptes du conseiller
 			listeComptesDuConseillerLogged.addAll(listeCompteDuClient);
-		}
+			
+		}//end for
 
 		
 		return listeComptesDuConseillerLogged;
@@ -601,17 +630,20 @@ public class GestionComptesBean implements Serializable{
 
 		
 	/**
-	 * Recupere la liste des comptes appartenant au conseiller enregistré via la dao. <br/>
-	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-	 * @return
+	 * Recupere l'id du conseiller du compte par l'id du compte <br/>
+	 * @param idCompte : identifiant du compte pour lequel on chercher l'id du conseiller
+	 * @return idConseiller
 	 */
 	public int findConseillerduCompte(int idCompte){
 		System.out.println("Je suis dans findConseillerduCompte du MB de Compte");
 		
+		//1. On recupere l'id du client propriétaire du compte
 		int IDclient = compteDAO.getCompteByID(idCompte).getClientID();
 		
+		//2. On recupere le client par son ID
 		Client client = clientDAO.getClientByID(IDclient);
 		
+		//3. On recupere l'id du conseiller par l'objet client
 		int idConseiller = client.getConseillerId();
 				
 		return idConseiller;
@@ -648,7 +680,8 @@ public class GestionComptesBean implements Serializable{
 			montantmaximum=compte.getSolde();
 		}//end else
 		
-		if (montantDebit <= montantmaximum) {
+	
+		if (montantDebit < montantmaximum) {
 			//Si condition valide
 			System.out.println("Le retrait est autorisé.");
 			
@@ -709,34 +742,50 @@ public class GestionComptesBean implements Serializable{
 		Compte compteDonneur = compteDAO.getCompteByID(idCompteDonneur);  //on recupere les comptes par leur ID
 		Compte compteReceveur = compteDAO.getCompteByID(idCompteReceveur);
 				
-				
-		//On test si le transfère s'est bien passé
-		if(compteDAO.transfert(compteDonneur,compteReceveur, montantVirement)) {
-					
-			//------------- TRANSFERT OK--------------------
-			//Envoie d'un message de réussite
-			System.out.println("Le transfère a été effectué avec succès");
-			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-														"Débit effectué",
-														"Le compte débiteur a été modifier avec succès"));
-					
-			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
-														"Crédit effectué",
-														"Le compte receveur a été modifier avec succès"));
-					
-
-			setMontantVirement(0);//on remet le montant à 0
-								
+		double montantmaximum;
+		if(compteDonneur.getTypeCompte().equals("courant")) {
+			montantmaximum=compteDonneur.getSolde()+compteDonneur.getDecouvert();
+			
 		}else {
-					
-			//-------------TRANSFERT NOT OK--------------------------
-			//Envoie d'un message d'echec
-			System.out.println("Le transfère n'a pas été effectué.");
-			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
-																	"Echec du transfère", 
-																	"Les modifications n'ont pas été effectué"));
+			montantmaximum=compteDonneur.getSolde();
 		}//end else
-							
+		
+	
+		if (montantVirement < montantmaximum) {
+			//On test si le transfère s'est bien passé
+			if(compteDAO.transfert(compteDonneur,compteReceveur, montantVirement)) {
+						
+				//------------- TRANSFERT OK--------------------
+				//Envoie d'un message de réussite
+				System.out.println("Le transfère a été effectué avec succès");
+				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+															"Débit effectué",
+															"Le compte débiteur a été modifier avec succès"));
+						
+				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
+															"Crédit effectué",
+															"Le compte receveur a été modifier avec succès"));
+						
+	
+				setMontantVirement(0);//on remet le montant à 0
+									
+			}else {
+						
+				//-------------TRANSFERT NOT OK--------------------------
+				//Envoie d'un message d'echec
+				System.out.println("Le transfère n'a pas été effectué.");
+				contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+																		"Echec du transfère", 
+																		"Les modifications n'ont pas été effectué"));
+			}//end else
+		}else {
+			//condition non validée
+			System.out.println("Le virement n'a pas été autorisé.");
+			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
+																"Virement refusé", 
+																"Solde insuffisant"));
+			
+		}//end else					
 							
 	}//end virementCompte
 }//end class
