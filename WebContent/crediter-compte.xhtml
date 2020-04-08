@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+<h1>Créditer un Compte</h1>
+
+
+	
+	<h:form>
+	
+		<h:panelGrid columns="2" border="1" cellpadding="5" cellspacing="5">
+		
+			<f:facet name="header">
+				Formulaire pour créditer un compte.
+			</f:facet> 
+			
+			<h:outputLabel for="idIdCompte" value="Identifiant" />
+			<h:inputText id="idIdCompte" value="#{gestionCompte.compte.idCompte}" />
+			
+			<h:outputLabel for="idmontantCredit" value="MontantCredit" />
+			<h:inputText id="idmontantCredit" value="#{gestionCompte.montantCredit}" />
+			
+			<f:facet name="footer">
+				<h:commandButton action="listCompte" actionListener="#{gestionCompte.creditCompte}" value="Créditer" />
+			</f:facet>
+
+		</h:panelGrid>
+	
+	</h:form>
+</body> 
+</html>
