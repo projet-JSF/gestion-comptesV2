@@ -40,6 +40,7 @@ public class GestionComptesBean implements Serializable{
 	
 	//autres props utils aux differentes fonctions
 	private int idCompteSelectionner;
+	private Client clientProprietaireCompteSelec;
 	
 	private List<Integer> listeIDCompte;
 	private List<Integer> listeIDClient;
@@ -207,6 +208,16 @@ public class GestionComptesBean implements Serializable{
 	}
 
 
+	public Client getClientProprietaireCompteSelec() {
+		return clientProprietaireCompteSelec;
+	}
+
+
+	public void setClientProprietaireCompteSelec(Client clientProprietaireCompteSelec) {
+		this.clientProprietaireCompteSelec = clientProprietaireCompteSelec;
+	}
+
+
 	public IConseillerDAO getConseillerDAO() {
 		return conseillerDAO;
 	}
@@ -371,7 +382,7 @@ public class GestionComptesBean implements Serializable{
 //	}//end supprimerComptesBdd
 	
 /*====================================================================================================*/	
-/*==selectionnerClientSansParam================================================================================*/
+/*==selectionnerCompteSansParam================================================================================*/
 /*====================================================================================================*/	
 
 	/**
@@ -393,7 +404,7 @@ public class GestionComptesBean implements Serializable{
 		
 		//Recup de la liste des id des clients
 		setListeIDClient(clientDAO.getAllIDClients());
-		System.out.println("Liste id client = "+ clientDAO.getAllIDClients());
+	
 		
 		
 		}//end selectionnerClient
@@ -425,8 +436,10 @@ public class GestionComptesBean implements Serializable{
 		
 		//Recup de la liste des id des clients
 		setListeIDClient(clientDAO.getAllIDClients());
-		System.out.println("Liste id client = "+ clientDAO.getAllIDClients());
 		
+		//Recup du client propriétaire
+		setClientProprietaireCompteSelec(clientDAO.getClientByID(compte.getClientID()));
+		System.out.println(clientProprietaireCompteSelec);
 		
 		
 		/**
@@ -435,6 +448,19 @@ public class GestionComptesBean implements Serializable{
 		
 	}//end selectionnerCompte
 	
+/*====================================================================================================*/	
+/*==getProprietaire====================================================================================*/
+/*====================================================================================================*/
+	/**
+	 * 
+	 * @return une liste contenant un seul client (proprio du compte selectionner)
+	 */
+	public List<Client> getProprietaire(){
+		System.out.println("Je suis dans getProprietaire du managed bean du compte");
+		List<Client> proprietaireFormatListe= new ArrayList<>();
+		proprietaireFormatListe.add(clientProprietaireCompteSelec);
+		return proprietaireFormatListe;
+	}//end getProprietaire
 	
 	
 /*====================================================================================================*/	

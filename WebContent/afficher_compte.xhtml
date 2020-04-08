@@ -49,7 +49,7 @@
 						       	<p:commandButton update="grid" action="afficheCompte" value="Debiter" actionListener="#{gestionCompte.debitCompte}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 						       	
 						       	<h:outputLabel for="idCredit" value="Faire un credit" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
-								<h:inputText  value="#{gestionCompte.montantCredit}"  rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
+								<h:inputText  id="idCredit" value="#{gestionCompte.montantCredit}"  rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}"/>
 						       	<p:commandButton update="grid" action="afficheCompte" value="Crediter" actionListener="#{gestionCompte.creditCompte}" rendered="#{gestionCompte.findConseillerduCompte(gestionCompte.compte.idCompte)==authenticationBean.conseillerlogged.idConseiller}" />
 						       	
 						       	 
@@ -65,19 +65,112 @@
 								
 								
 								</f:facet>
-								
-
-					    		
 							</h:panelGrid>
 						</p:panel>
 					</h:form>
 					
+					<br/> <br/>
+					<!-- ==================Affichage du propriétaire ============================================ -->
 					
-			<!-- =========Affichage des messages ==================== -->
-			
-			<p:messages id="messages" showDetail="true" closable="true">
-        		<p:autoUpdate />
-    		</p:messages>
+					<h:form>
+						<p:dataTable value="#{gestionCompte.getProprietaire()}" var="client" resizableColumns="true" width="60%" border="1">
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="ID client" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.idClient }" />
+							</p:column>
+						
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Nom" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.nom }" />
+							</p:column>
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Prenom" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.prenom }" />
+							</p:column>
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Adresse" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.adresse }" />
+							</p:column>
+							
+										<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Code postal" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.codePostal }" />
+							</p:column>
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Ville" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.ville }" />
+							</p:column>
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Telephone" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.telephone }" />
+							</p:column>
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Conseiller" />
+								</f:facet>
+								<!-- Donnée de la colonne -->
+								<h:outputText value="#{client.conseillerId}" />
+							</p:column>
+	
+							
+							<!-- Colonne pour afficher le client -->
+							
+							<p:column>
+								<!-- En tete de la colonne -->
+								<f:facet name="header">
+									<h:outputText value="Afficher" />
+								</f:facet>
+	
+								<!-- Donnée de la colonne -->
+							
+								<h:commandLink id="affiche" action="afficheClient" actionListener="#{gestionClient.selectionnerClient}" >
+									
+										<!-- Passage de parametre au composant : nom deleteID / valeur = l'id du client -->
+										<f:param id="afficherID" name="id" value="#{client.idClient}"/>
+										
+										<!--  label du lien  -->
+										<h:outputText value="afficher" />
+								
+								</h:commandLink>
+								
+							</p:column>
+						
+						</p:dataTable>
+					</h:form>
 		</ui:define>
 		
 	</ui:composition>

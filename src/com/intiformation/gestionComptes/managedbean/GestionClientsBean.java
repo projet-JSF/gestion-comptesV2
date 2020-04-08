@@ -500,9 +500,9 @@ public class GestionClientsBean implements Serializable{
 	 */
 	public List<Compte> findlisteComptesDuClient() {
 		System.out.println("Je suis dans findlisteComptesDuClient du MB de Client");
-		System.out.println(getIdClientSelectionner());
+
 		listeComptesDuClient = compteDAO.getCompteByIDClient(getIdClientSelectionner());
-		System.out.println(listeComptesDuClient);
+
 		
 		return listeComptesDuClient;
 		
