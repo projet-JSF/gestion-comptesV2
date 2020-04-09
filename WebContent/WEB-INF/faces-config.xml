@@ -69,7 +69,31 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>		
  		
  	</navigation-rule>
  	
@@ -141,6 +165,31 @@
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
  		
+ 		 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
+ 		
   	</navigation-rule>	
  	
  	<!--  3. regle de navigation pour la page ajouter_client.xhtml -->
@@ -209,6 +258,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+  		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  		
  	</navigation-rule>		
 
@@ -279,7 +352,31 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
- 			
+ 		
+ 	 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  	</navigation-rule>
  	
  	
@@ -350,7 +447,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
-
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  	</navigation-rule>
  	
  	
@@ -421,7 +541,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 	 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  	</navigation-rule>
  	
  	
@@ -491,7 +634,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+  		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  	</navigation-rule>
  	
   	<!--  8. regle de navigation pour la page ajouter-compte.xhtml -->
@@ -560,7 +726,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 	 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	
  	</navigation-rule>
  	
   	<!--  9. regle de navigation pour la page chercher_compte.xhtml -->
@@ -629,7 +818,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>			
  	</navigation-rule>
  	
   	<!--  10. regle de navigation pour la page liste_all_comptes.xhtml -->
@@ -698,7 +910,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
  	</navigation-rule>
  	
  	 	<!--  11. regle de navigation pour la page modifier-compte.xhtml -->
@@ -767,7 +1002,30 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
  	</navigation-rule>
  	
  	
@@ -837,7 +1095,486 @@
  			<from-outcome>transfert</from-outcome>
  			<to-view-id>/virement.xhtml</to-view-id>
  		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
  		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
+ 	</navigation-rule>
+ 	
+ 	
+  <!--  13. regle de navigation pour la page modifier_conseiller.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/modifier_conseiller.xhtml</from-view-id>
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
+ 	</navigation-rule>
+ 	
+   <!--  14. regle de navigation pour la page ajouter_conseiller.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/ajouter_conseiller.xhtml</from-view-id>
+   		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>			
+ 	</navigation-rule>
+   
+    <!--  15. regle de navigation pour la page afficher_conseiller.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/afficher_conseiller.xhtml</from-view-id>
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
+ 	</navigation-rule>
+ 	
+     <!--  16. regle de navigation pour la page chercher_conseiller.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/chercher_conseiller.xhtml</from-view-id>
+   		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>			
+ 	</navigation-rule>
+ 	
+  <!--  17. regle de navigation pour la page liste_all_conseillers.xhtml -->
+ 	
+ 	<navigation-rule>
+ 	
+ 		<from-view-id>/liste_all_conseillers.xhtml</from-view-id>
+  		<navigation-case>
+ 			<from-outcome>accueil</from-outcome>
+ 			<to-view-id>/accueil.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>editClient</from-outcome>
+ 			<to-view-id>/modifier_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addClient</from-outcome>
+ 			<to-view-id>/ajouter_client.xhtml</to-view-id>	
+ 		</navigation-case>
+
+ 		<navigation-case>
+ 			<from-outcome>afficheClient</from-outcome>
+ 			<to-view-id>/afficher_client.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchClient</from-outcome>
+ 			<to-view-id>/chercher_client.xhtml</to-view-id>
+ 		</navigation-case>		
+
+ 		<navigation-case>
+ 			<from-outcome>listAllClients</from-outcome>
+ 			<to-view-id>/liste_all_clients.xhtml</to-view-id>
+ 		</navigation-case>	
+
+
+ 		<navigation-case>
+ 			<from-outcome>editCompte</from-outcome>
+ 			<to-view-id>/modifier-compte.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addCompte</from-outcome>
+ 			<to-view-id>/ajouter-compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>afficheCompte</from-outcome>
+ 			<to-view-id>/afficher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>searchCompte</from-outcome>
+ 			<to-view-id>/chercher_compte.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 		<navigation-case>
+ 			<from-outcome>listAllComptes</from-outcome>
+ 			<to-view-id>/liste_all_comptes.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		 <navigation-case>
+ 			<from-outcome>transfert</from-outcome>
+ 			<to-view-id>/virement.xhtml</to-view-id>
+ 		</navigation-case>
+ 		<navigation-case>
+ 			<from-outcome>editConseiller</from-outcome>
+ 			<to-view-id>/modifier_conseiller.xhtml</to-view-id>	
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>addConseiller</from-outcome>
+ 			<to-view-id>/ajouter_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>afficheConseiller</from-outcome>
+ 			<to-view-id>/afficher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>searchConseiller</from-outcome>
+ 			<to-view-id>/chercher_conseiller.xhtml</to-view-id>
+ 		</navigation-case>
+ 		
+ 		<navigation-case>
+ 			<from-outcome>listAllConseillers</from-outcome>
+ 			<to-view-id>/liste_all_conseillers.xhtml</to-view-id>
+ 		</navigation-case>	 		
  	</navigation-rule>
 </faces-config>
 

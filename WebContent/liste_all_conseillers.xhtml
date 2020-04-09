@@ -22,14 +22,14 @@
 				<!--  Avec le composant jsf h:datatable -->
 				
 				
-				<h2 style="font-family: 'Open Sans', sans-serif;"> Liste de tous clients</h2>
+				<h2 style="font-family: 'Open Sans', sans-serif;"> Liste des conseillers</h2>
 			
 				<h:form>
-					<p:dataTable value="#{gestionConseiller.findAllClientsBdd()}" var="conseiller" resizableColumns="true" width="60%" border="1">
+					<p:dataTable value="#{gestionConseiller.findAllConseillers()}" var="conseiller" resizableColumns="true" width="60%" border="1">
 						<p:column>
 							<!-- En tete de la colonne -->
 							<f:facet name="header">
-								<h:outputText value="ID client" />
+								<h:outputText value="ID conseiller" />
 							</f:facet>
 							<!-- Donnée de la colonne -->
 							<h:outputText value="#{conseiller.idConseiller }" />
@@ -41,67 +41,31 @@
 								<h:outputText value="Nom" />
 							</f:facet>
 							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiler.nom }" />
+							<h:outputText value="#{conseiller.nom }" />
 						</p:column>
 						
+
+
+						<p:column>
+							
+							<f:facet name="header">
+								<h:outputText value="Email" />
+							</f:facet>
+							<!-- Donnée de la colonne -->
+							<h:outputText value="#{conseiller.mail}" />
+						</p:column>
+					
 						<p:column>
 							<!-- En tete de la colonne -->
 							<f:facet name="header">
-								<h:outputText value="Prenom" />
+								<h:outputText value="Mot de passe" />
 							</f:facet>
 							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiller.prenom }" />
+							<h:outputText value="#{conseiller.motDePasse}" />
 						</p:column>
-						
-						<p:column>
-							<!-- En tete de la colonne -->
-							<f:facet name="header">
-								<h:outputText value="Adresse" />
-							</f:facet>
-							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiller.adresse }" />
-						</p:column>
-						
-									<p:column>
-							<!-- En tete de la colonne -->
-							<f:facet name="header">
-								<h:outputText value="Code postal" />
-							</f:facet>
-							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiller.codePostal }" />
-						</p:column>
-						
-						<p:column>
-							<!-- En tete de la colonne -->
-							<f:facet name="header">
-								<h:outputText value="Ville" />
-							</f:facet>
-							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiller.ville }" />
-						</p:column>
-						
-						<p:column>
-							<!-- En tete de la colonne -->
-							<f:facet name="header">
-								<h:outputText value="Telephone" />
-							</f:facet>
-							<!-- Donnée de la colonne -->
-							<h:outputText value="#{conseiller.telephone }" />
-						</p:column>
-						
-						<!-- 
-						<p:column>
-							<!-- En tete de la colonne -->
-							<f:facet name="header">
-								<h:outputText value="Conseiller" />
-							</f:facet>
-							<!-- Donnée de la colonne -->
-							<h:outputText value="#{client.conseillerId}" />
-						</p:column>
-						 -->
 
 						
-						<!-- Colonne pour afficher le client -->
+						<!-- Colonne pour afficher le conseiller -->
 						
 						<p:column>
 							<!-- En tete de la colonne -->
@@ -119,7 +83,7 @@
 							<h:commandLink id="affiche" action="afficheConseiller" actionListener="#{gestionConseiller.selectionnerConseiller}" >
 								
 									<!-- Passage de parametre au composant : nom deleteID / valeur = l'id du client -->
-									<f:param id="afficherID" name="id" value="#{client.idConseiller}"/>
+									<f:param id="afficherID" name="id" value="#{conseiller.idConseiller}"/>
 									
 									<!--  label du lien  -->
 									<h:outputText value="afficher" />

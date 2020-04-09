@@ -39,6 +39,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#modifier_client.xhtml"
@@ -80,6 +99,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#ajouter_client.xhtml"
@@ -121,6 +159,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#afficher_client.xhtml"
@@ -162,6 +219,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#chercher_client.xhtml"
@@ -203,6 +279,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#liste_all_clients.xhtml"
@@ -244,6 +339,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#modifier-compte.xhtml"
@@ -285,6 +399,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#ajouter-compte.xhtml"
@@ -326,6 +459,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#liste_all_comptes.xhtml"
@@ -367,6 +519,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#afficher_compte.xhtml"
@@ -408,6 +579,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#chercher_compte.xhtml"
@@ -449,6 +639,25 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#virement.xhtml" PATH="/virement.xhtml"
@@ -490,6 +699,325 @@
    <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
     PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
     TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#modifier_conseiller.xhtml"
+  PATH="/modifier_conseiller.xhtml" SHAPE="1184,1489,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#modifier_conseiller.xhtml:0" NAME="item"
+   PATH="/modifier_conseiller.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#ajouter_conseiller.xhtml"
+  PATH="/ajouter_conseiller.xhtml" SHAPE="1184,2113,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#ajouter_conseiller.xhtml:0" NAME="item"
+   PATH="/ajouter_conseiller.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#afficher_conseiller.xhtml"
+  PATH="/afficher_conseiller.xhtml" SHAPE="1184,865,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#afficher_conseiller.xhtml:0" NAME="item"
+   PATH="/afficher_conseiller.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#chercher_conseiller.xhtml"
+  PATH="/chercher_conseiller.xhtml" SHAPE="1184,2737,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#chercher_conseiller.xhtml:0" NAME="item"
+   PATH="/chercher_conseiller.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#liste_all_conseillers.xhtml"
+  PATH="/liste_all_conseillers.xhtml" SHAPE="1184,753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#liste_all_conseillers.xhtml:0" NAME="item"
+   PATH="/liste_all_conseillers.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="accueil::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="accueil" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editClient::#modifier_client.xhtml"
+    NAME="output1" PATH="/modifier_client.xhtml"
+    TARGET="rules:#modifier_client.xhtml" TITLE="editClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addClient::#ajouter_client.xhtml"
+    NAME="output2" PATH="/ajouter_client.xhtml"
+    TARGET="rules:#ajouter_client.xhtml" TITLE="addClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheClient::#afficher_client.xhtml"
+    NAME="output3" PATH="/afficher_client.xhtml"
+    TARGET="rules:#afficher_client.xhtml" TITLE="afficheClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchClient::#chercher_client.xhtml"
+    NAME="output4" PATH="/chercher_client.xhtml"
+    TARGET="rules:#chercher_client.xhtml" TITLE="searchClient" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllClients::#liste_all_clients.xhtml"
+    NAME="output5" PATH="/liste_all_clients.xhtml"
+    TARGET="rules:#liste_all_clients.xhtml" TITLE="listAllClients" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editCompte::#modifier-compte.xhtml"
+    NAME="output6" PATH="/modifier-compte.xhtml"
+    TARGET="rules:#modifier-compte.xhtml" TITLE="editCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addCompte::#ajouter-compte.xhtml"
+    NAME="output7" PATH="/ajouter-compte.xhtml"
+    TARGET="rules:#ajouter-compte.xhtml" TITLE="addCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="afficheCompte::#afficher_compte.xhtml"
+    NAME="output8" PATH="/afficher_compte.xhtml"
+    TARGET="rules:#afficher_compte.xhtml" TITLE="afficheCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="searchCompte::#chercher_compte.xhtml"
+    NAME="output9" PATH="/chercher_compte.xhtml"
+    TARGET="rules:#chercher_compte.xhtml" TITLE="searchCompte" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listAllComptes::#liste_all_comptes.xhtml"
+    NAME="output10" PATH="/liste_all_comptes.xhtml"
+    TARGET="rules:#liste_all_comptes.xhtml" TITLE="listAllComptes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="transfert::#virement.xhtml" NAME="output11"
+    PATH="/virement.xhtml" TARGET="rules:#virement.xhtml"
+    TITLE="transfert" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editConseiller::#modifier_conseiller.xhtml"
+    NAME="output12" PATH="/modifier_conseiller.xhtml"
+    TARGET="rules:#modifier_conseiller.xhtml" TITLE="editConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addConseiller::#ajouter_conseiller.xhtml"
+    NAME="output13" PATH="/ajouter_conseiller.xhtml"
+    TARGET="rules:#ajouter_conseiller.xhtml" TITLE="addConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="afficheConseiller::#afficher_conseiller.xhtml" NAME="output14"
+    PATH="/afficher_conseiller.xhtml"
+    TARGET="rules:#afficher_conseiller.xhtml" TITLE="afficheConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="searchConseiller::#chercher_conseiller.xhtml" NAME="output15"
+    PATH="/chercher_conseiller.xhtml"
+    TARGET="rules:#chercher_conseiller.xhtml" TITLE="searchConseiller" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listAllConseillers::#liste_all_conseillers.xhtml"
+    NAME="output16" PATH="/liste_all_conseillers.xhtml"
+    TARGET="rules:#liste_all_conseillers.xhtml"
+    TITLE="listAllConseillers" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>

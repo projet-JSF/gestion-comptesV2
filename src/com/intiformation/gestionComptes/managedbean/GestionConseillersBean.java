@@ -20,10 +20,10 @@ import com.intiformation.gestionComptes.model.Conseiller;
 
 /**
  * managed bean pour la gestion des conseillers
- * @author IN-DF-019
+ * @author Valentin
  *
  */
-@ManagedBean(name="GestionConseiller")
+@ManagedBean(name="gestionConseiller")
 @SessionScoped
 public class GestionConseillersBean implements Serializable{
 	
@@ -208,7 +208,7 @@ public class GestionConseillersBean implements Serializable{
 		System.out.println("Pour sélectionner un conseiller dans selectionnerConseiller du MB de Client");
 		
 		//1. récup du param passé dans le composant au click du lien modifier
-		UIParameter cp = (UIParameter) event.getComponent().findComponent("updateID");
+		UIParameter cp = (UIParameter) event.getComponent().findComponent("afficherID");
 		
 		//2. recup de la valeur du param => l'id du conseiller à modifier
 		int conseillerID = (int) cp.getValue();
