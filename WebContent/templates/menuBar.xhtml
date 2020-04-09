@@ -34,7 +34,7 @@
 		 
 		 		<p:submenu label="Gestion conseillers" icon="pi pi-money-bill">
 		            <p:menuitem value="Voir la liste des conseillers" action="listAllConseillers"/>
-		            <p:menuitem value="Chercher un conseiller" action="searchConseiller" />
+		            <p:menuitem value="Chercher un conseiller" action="searchConseiller" actionListener="#{gestionConseiller.findlisteIDConseillers}"/>
 		            <p:menuitem value="Ajouter un conseiller" action="addConseiller" actionListener="#{gestionConseiller.initialiserConseiller}"/>
 		        </p:submenu>
 		 

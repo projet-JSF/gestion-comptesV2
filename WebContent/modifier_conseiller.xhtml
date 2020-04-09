@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+	<!-- ============Utilisation du modele layout.xhtml============ -->
+
+	<!-- Injection du layout  -->	
+	<ui:composition template="/templates/layout.xhtml">
+
+	
+		<!-- Definition d'un nouveau content -->
+		<ui:define name="content">  
+			<br/><br/>
+				<h:form>
+					<p:panel header="Modification d'un conseiller" id="panel" >
+						<h:panelGrid  id="grid" columns="3" cellpadding="5" cellspacing="5">
+
+							<p:outputLabel for="idIDConseiller" value="ID conseiller" />
+							<h:outputText id="idIDConseiller" value="#{gestionConseiller.conseiller.idConseiller}" />
+							<br/>
+							
+							<p:outputLabel for="idNomConseiller" value="Nom" />
+							<p:inputText id="idNomConseiller" value="#{gestionConseiller.conseiller.nom}"  required="true"/>
+							<p:message for="idNomConseiller" />
+							
+							
+							<p:outputLabel for="idMailConseiller" value="Email" />
+							<p:inputText id="idMailConseiller" value="#{gestionConseiller.conseiller.mail}" required="true"/>
+							<p:message for="idMailConseiller" />
+							
+							
+							<p:outputLabel for="idMdpConseiller" value="Mot de passe" />
+							<p:inputText id="idMdpConseiller" value="#{gestionConseiller.conseiller.motDePasse}" required="true" />
+							<p:message for="idMdpConseiller" />
+							
+				       		 
+							<f:facet name="footer">
+								<p:commandButton update="grid" action="liste_all_conseillers" actionListener="#{gestionConseiller.modifierConseiller}" value="Modifer" />
+							</f:facet>
+				
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+		</ui:define>
+	
+	</ui:composition>
+</body> 
+</html>

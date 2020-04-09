@@ -23,42 +23,22 @@
 
 							
 							<p:outputLabel for="idNomConseiller" value="Nom" />
-							<p:inputText id="idNomConseiller" value="#{gestionConseiller.client.nom}"  required="true"/>
+							<p:inputText id="idNomConseiller" value="#{gestionConseiller.conseiller.nom}"  required="true"/>
 							<p:message for="idNomConseiller" />
 							
 							
-							<p:outputLabel for="idPrenomConseiller" value="Prenom" />
-							<p:inputText id="idPrenomConseiller" value="#{gestionClient.client.prenom}" required="true"/>
-							<p:message for="idPrenomConseiller" />
+							<p:outputLabel for="idMailConseiller" value="Email" />
+							<p:inputText id="idMailConseiller" value="#{gestionConseiller.conseiller.mail}" required="true"/>
+							<p:message for="idMailConseiller" />
 							
 							
-							<p:outputLabel for="idAdresseConseiller" value="Adresse" />
-							<p:inputText id="idAdresseConseiller" value="#{gestionClient.client.adresse}" />
-							<p:message for="idAdresseConseiller" />
+							<p:outputLabel for="idMdpConseiller" value="Mot de passe" />
+							<p:inputText id="idMdpConseiller" value="#{gestionConseiller.conseiller.motDePasse}" required="true"/>
+							<p:message for="idMdpConseiller" />
 							
-							<p:outputLabel for="idCodePostalConseiller" value="Code postal" />
-							<p:inputText id="idCodePostalConseiller" value="#{gestionClient.client.codePostal}">
-								<f:validateDoubleRange minimum="0" maximum="100000" />
-							</p:inputText>
-							<p:message for="idCodePostalConseiller" />
-							
-							<p:outputLabel for="idVilleConseiller" value="Ville" />
-							<p:inputText id="idVilleConseiller" value="#{gestionClient.client.ville}" />
-							<p:message for="idVilleConseiller" />
-							
-							<p:outputLabel for="idTelephoneConseiller" value="Telephone" />
-							<p:inputText id="idTelephoneConseiller" value="#{gestionClient.client.telephone}">
-								<f:validateDoubleRange minimum="0" maximum="10000000000" />
-							</p:inputText>
-							<p:message for="idTelephoneClient" />
-							
-							<p:outputLabel for="idConseiller" value="ID conseiller" />
-							<p:selectOneMenu id="idConseiller" value="#{gestionClient.client.conseillerId}" style="width:180px">
-								<f:selectItems value="#{gestionClient.listeIDConseillers}" />
-				       		 </p:selectOneMenu>
 				       		 
 							<f:facet name="footer">
-								<p:commandButton update="grid" action="accueil" actionListener="#{gestionClient.ajouterClient}" value="Ajouter" />
+								<p:commandButton update="grid" action="liste_all_conseillers" actionListener="#{gestionConseiller.ajouterConseiller}" value="Ajouter" />
 							</f:facet>
 				
 						</h:panelGrid>

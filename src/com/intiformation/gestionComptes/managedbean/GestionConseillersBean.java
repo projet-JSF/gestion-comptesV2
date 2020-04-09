@@ -39,7 +39,7 @@ public class GestionConseillersBean implements Serializable{
 	//autres propriétés utiles aux méthodes
 	private int idConseillerSelectionner;
 	private List<Client> listeClientsduConseiller;
-	
+	private List<Integer> listeIDConseillers;
 	//dao du conseiller
 	IConseillerDAO conseillerDAO;
 
@@ -93,6 +93,16 @@ public class GestionConseillersBean implements Serializable{
 	}
 
 
+	public List<Integer> getListeIDConseillers() {
+		return listeIDConseillers;
+	}
+
+
+	public void setListeIDConseillers(List<Integer> listeIDConseillers) {
+		this.listeIDConseillers = listeIDConseillers;
+	}
+
+
 	public Conseiller getConseiller() {
 		return conseiller;
 	}
@@ -120,7 +130,22 @@ public class GestionConseillersBean implements Serializable{
 		return listeConseillersBDD;
 	}
 	
-	
+	/*====================================================================================================*/	
+	/*==findlisteIDConseillers====================================================================================*/
+	/*====================================================================================================*/
+			
+		/**
+		 * 
+		 * @param event
+		 */
+		public List<Integer> findlisteIDConseillers() {
+			System.out.println("Je suis dans findlisteIDConseillers du MB de Client");
+			
+			listeIDConseillers=conseillerDAO.getAllIDConseillers();
+
+			return listeIDConseillers;
+		}//end findlisteIDConseillers
+		
 /*====================================================================================================*/	
 /*==supprimerConseiller=================================================================================*/
 /*====================================================================================================*/	
@@ -173,7 +198,7 @@ public class GestionConseillersBean implements Serializable{
 	}//end supprimerConseiller
 	
 /*====================================================================================================*/	
-/*==selectionnerClientSansParam================================================================================*/
+/*==selectionnerConseillerSansParam================================================================================*/
 /*====================================================================================================*/	
 
 	/**
@@ -182,12 +207,13 @@ public class GestionConseillersBean implements Serializable{
 	 * @param event
 	 */
 		
-	public void selectionnerClientSansParam(ActionEvent event) {
+	public void selectionnerConseillerSansParam(ActionEvent event) {
 		System.out.println("Je suis dans selectionnerClientSansParam du MB de Client");
 
 		//1. recup de l'id du conseiller à modifier
-		int conseillerID = conseiller.getIdConseiller();
-			
+		int conseillerID = getIdConseillerSelectionner();
+		
+		System.out.println("id : "+ conseillerID);
 		//2. recup du conseiller dans la bdd par l'id
 		Conseiller conseillerEdit = conseillerDAO.getConseillerByID(conseillerID);
 			
