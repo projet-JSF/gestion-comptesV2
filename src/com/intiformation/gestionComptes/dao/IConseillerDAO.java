@@ -1,9 +1,4 @@
 package com.intiformation.gestionComptes.dao;
-/**
- * Interface de la DAO pour le conseiller 
- * @author IN-MP-018
- *
- */
 
 import java.sql.Connection;
 import java.util.List;
@@ -49,4 +44,4 @@ public interface IConseillerDAO {
 	public boolean isEmailAlreadyTaken(String pMail);
 	
 
-}
+}//end class

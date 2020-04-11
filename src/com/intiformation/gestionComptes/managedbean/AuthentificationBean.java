@@ -15,7 +15,7 @@ import com.intiformation.gestionComptes.model.Conseiller;
 
 
 /**
- * managedbean pourl'authentification de l'utilisateur <br/>
+ * managedbean pourl'authentification du conseiller <br/>
  * @author IN-MP-018
  *
  */
@@ -26,18 +26,20 @@ public class AuthentificationBean implements Serializable{
 
 	/*=========================PROPRIETES=========================*/
 	
-	private String login = "pierre@gmail.com";
+	private String login = "pierre@gmail.com"; // Initialisation pour faciliter la connexion
 	private String password = "0000";
 	
-	private Conseiller conseillerlogged; /// A mettre dans  gestionConseiller MB
+	private Conseiller conseillerlogged; 
 	
-	//dao
+	//Initialisation de la dao du conseiller
 	
 	private IConseillerDAO conseillerDAO;
 	
 	
 	/*=========================CONSTRUCTEUR=========================*/
-	
+	/**
+	 * Constructeur qui instencie la dao du conseiller
+	 */
 	public AuthentificationBean() {
 		conseillerDAO=new ConseillerDaoImpl();
 
@@ -84,8 +86,8 @@ public class AuthentificationBean implements Serializable{
 		
 
 	/**
-	 * Permet de connecter l'utilisateur et de lui creer une session
-	 * @return
+	 * Permet de connecter le conseiller et de lui créer une session
+	 * @return "accueil.xhtml" pour renvoyer vers la page d'accueil
 	 */
 	
 	public String connecterUtilisateur() {
@@ -120,11 +122,7 @@ public class AuthentificationBean implements Serializable{
 			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_FATAL, "Echec de connexion", "Identifiant ou mot de passe invalide");
 			
 			//envoi du message vers la vue via le context JSF
-			
-			/**
-			 * addMessage(String, FacesMessage):
-			 * String =  soit l'id du composant soit null pour l'ensemble de la page 
-			 */
+
 			contextJSF.addMessage(null,message);
 			
 
@@ -142,7 +140,7 @@ public class AuthentificationBean implements Serializable{
 	
 	
 	/**
-	 * Permet de deconnecter l'utilisateur
+	 * Permet de deconnecter le conseiller
 	 * @return
 	 */
 	public String deconnecterUtilisateur() {

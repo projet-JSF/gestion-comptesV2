@@ -32,15 +32,22 @@ public class GestionClientsBean implements Serializable{
 	
 	/*=========================PROPRIETES=========================*/
 	
-	// Liste des clients pour alimenter la page accueil.xhtml
+	// Liste des clients pour alimenter la page liste_all_client.xhtml
 	List<Client> listeClientsBDD;
 	
 	// Propriété client pour l'ajout et pour l'édition
 	private Client client;
 	
+	//id du client selectionné, renseigné lorsque l'on clique sur Modifier de la page afficher_client.xhtml
 	private int idClientSelectionner;
+	
+	// Liste des identifiants des conseillers pour les menus de selection des pages modifier_client.xhtml et ajout_client.xhtml 
 	private List<Integer> listeIDConseillers;
+	
+	//Liste des identifiants des clients
 	private List<Integer> listeIDClient;
+	
+	//Liste des comptes du client pour la page afficher_client.xhtml
 	private List<Compte> listeComptesDuClient;
 	
 	
@@ -50,12 +57,13 @@ public class GestionClientsBean implements Serializable{
 	//dao du conseiller
 	IConseillerDAO conseillerDAO;
 	
+	//dao du compte
 	ICompteDAO compteDAO;
 	
 	/*=========================CONSTRUCTEUR=========================*/
 	/**
 	 * Constructeur vide pour l'instanciation du managedbean <br/>
-	 * Instancie la dao du client
+	 * Instancie la dao du client, du compte et du conseiller
 	 */
 	
 	public GestionClientsBean() {
@@ -163,8 +171,8 @@ public class GestionClientsBean implements Serializable{
 	
 	/**
 	 * Recupere la liste des clients dans la bdd via la dao. <br/>
-	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-	 * @return
+	 * Cette methode permet d'alimenter la table dans liste_all_clients.xhtml pour affichage
+	 * @return Liste des clients dans la bdd
 	 */
 	public List<Client> findAllClientsBdd(){
 		System.out.println("Je suis dans findAllClientsBdd du MB de Client");
@@ -181,7 +189,7 @@ public class GestionClientsBean implements Serializable{
 	/**
 	 * Recupere la liste des clients appartenant au conseiller enregistré via la dao. <br/>
 	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-	 * @return
+	 * @return Liste des clients appartenant au conseiller
 	 */
 	public List<Client> findClientsDuConseiller(int idConseiller){
 		System.out.println("Je suis dans findClientsDuConseiller du MB de Client");
@@ -194,24 +202,23 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/	
 /*==supprimerClient=================================================================================*/
 /*====================================================================================================*/	
+	
 	/**
-	 * Méthode invoquée au click sur le lien 'supprimer' de accueil.xhtml 
+	 * Méthode invoquée au click sur le lien 'supprimer' de afficher_client.xhtml </br>
 	 * Permet de supprimer un client dans la bdd via la dao
 	 */
 	
 	public void supprimerClient(ActionEvent event) {
 		System.out.println("Je suis dans supprimerClient du MB de Client");
 		
-		System.out.println(getClient().toString());
-		
-		//2. recup de l'id du client à supprimer
+		//1. recup de l'id du client à supprimer
 		int clientID = client.getIdClient();
 		System.out.println("Id du client à supprimer :"+ clientID);
 		
-		//3. Recup du context
+		//2. Recup du context
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//Suppression des comptes associés à ce client
+		//3. Suppression des comptes associés à ce client
 		
 		List<Compte> listeComptesClientSelectionner = compteDAO.getCompteByIDClient(clientID);
 		
@@ -221,10 +228,9 @@ public class GestionClientsBean implements Serializable{
 					contextJSF.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Réussite" , "Les comptes du client ont été supprimés avec succès"));
 				}else {
 					contextJSF.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Echec" ,"La suppression des comptes du client a échouée"));
-				}
-			}
-		}
-		
+				}//end else
+			}//end for
+		}//end if
 		
 		
 		//4. On test la suppression
@@ -244,47 +250,9 @@ public class GestionClientsBean implements Serializable{
 			
 			contextJSF.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Echec" ,"La suppression du client a échouée"));
 			
-			
 		}//end else
 	}//end supprimerClientsBdd
 	
-
-//	/**
-//	 * Méthode invoquée au click sur le lien 'supprimer' de accueil.xhtml 
-//	 * Permet de supprimer un client dans la bdd via la dao
-//	 */
-//	
-//	public void supprimerClient(ActionEvent event) {
-//		System.out.println("Je suis dans supprimerClient du MB de Client");
-//		
-//		//1. récup du param passé dans le composant au click du lien supprimer
-//		UIParameter cp = (UIParameter) event.getComponent().findComponent("deleteID");
-//		
-//		//2. recup de la valeur du param => l'id du client à supprimer
-//		int clientID = (int) cp.getValue();
-//		
-//		//3. Recup du context
-//		FacesContext contextJSF = FacesContext.getCurrentInstance();
-//		
-//		//4. On test la suppression
-//		
-//		if (clientDAO.supprimerClientByID(clientID)) {
-//			
-//			// ========== Suppression OK ========
-//			/* Envoi d'un message vers la vue via le context */
-//			
-//			contextJSF.addMessage(null, new FacesMessage( "Le client a été supprimer avec succès"));
-//			
-//		}else {
-//			
-//			// ========== Suppression NOT OK ========
-//			/* Envoi d'un lessage vers la vue via le context */
-//			
-//			contextJSF.addMessage(null, new FacesMessage("La suppression du client a échouée"));
-//			
-//			
-//		}//end else
-//	}//end supprimerClientsBdd
 	
 	
 /*====================================================================================================*/	
@@ -292,26 +260,25 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * Invoquée au click du bouton Afficher de la page accueil.xhtml <br/>
-	 * Permet de stocker les info du client selectionner dans la propriétée 'client' du managed bean.
+	 * Invoquée au click du bouton Modifier de la page afficher_client.xhtml <br/>
+	 * Permet de stocker les info du client selectionné dans la propriétée 'client' du managed bean.
 	 * @param event
 	 */
 	
 	public void selectionnerClientSansParam(ActionEvent event) {
 		System.out.println("Je suis dans selectionnerClientSansParam du MB de Client");
 
+		//1. Recup de l'id du client sélectionné
 		int clientID = getIdClientSelectionner();
 		
-		//3. recup du client dans la bdd par l'id
+		//2. recup du client dans la bdd par l'id
 		Client clientEdit = clientDAO.getClientByID(clientID);
 		
-		//4. affectation du client à modifier à la prop client du managedbean
+		//3. affectation du client à modifier à la prop client du managedbean
 		setClient(clientEdit);
+		
+		//4. Recup de la liste des conseillers pour le select menu de la page modifier_client.xhtml
 		setListeIDConseillers(conseillerDAO.getAllIDConseillers());
-		System.out.println("Liste id conseiller = "+ conseillerDAO.getAllIDConseillers());
-		/**
-		 * dans la page editer_client.xhtml => on recupere le client à editer via la prop client du managedbean
-		 */
 		
 	}//end selectionnerClient
 	
@@ -320,8 +287,8 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * Invoquée au click du bouton Afficher de la page accueil.xhtml <br/>
-	 * Permet de stocker les info du client selectionner dans la propriétée 'client' du managed bean.
+	 * Invoquée au click du bouton Afficher de la page accueil.xhtml et liste_all_client.xhtml <br/>
+	 * Permet de stocker les info du client selectionné dans la propriétée 'client' du managed bean.
 	 * @param event
 	 */
 		
@@ -341,7 +308,8 @@ public class GestionClientsBean implements Serializable{
 			
 		//4. affectation du client à modifier à la prop clientEdit du managedbean
 		setClient(clientEdit);
-		setListeIDConseillers(conseillerDAO.getAllIDConseillers());
+		
+//		setListeIDConseillers(conseillerDAO.getAllIDConseillers());
 
 
 		}//end selectionnerClient	
@@ -391,7 +359,7 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/
 	
 	/**
-	 * Invoqué au click du bouton 'ajouter un client' de la page 'accueil.xhtml'
+	 * Invoqué au click du bouton 'ajouter un client' de la bar de menu
 	 * Permet d'initialiser un objet de type Client à vide pour recuperer les valeurs saisies dans le formulaire de la page ajouter_client.xhtml
 	 */
 	public void initialiserClient(ActionEvent event){
@@ -404,8 +372,8 @@ public class GestionClientsBean implements Serializable{
 		//Affectation de l'objet à la prop client du MB
 		setClient(addClient);
 		
+		//Recup de la liste des conseillers pour le select menu de la page ajouter_client.xhtml
 		setListeIDConseillers(conseillerDAO.getAllIDConseillers());
-		System.out.println("Liste id conseiller = "+ conseillerDAO.getAllIDConseillers());
 		
 	}//end initialiserClient
 
@@ -458,17 +426,14 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/
 			
 	/**
-	 * Invoquée au click du bouton Ajouter de la page ajouter-client.xhtml <br/>
-	 * Permet d'ajouter un nouveau client à la bdd
+	 * Permet de recuperer la liste des clients pour le select menu de la page chercher_client.xhtml
 	 * @param event
 	 */
 	public void findlisteIDClients() {
 		System.out.println("Je suis dans findlisteIDClients du MB de Client");
-		System.out.println("Liste clients :" + clientDAO.getAllIDClients());
-
 		
+		//Recup de la liste des id des clients
 		setListeIDClient(clientDAO.getAllIDClients());
-
 
 	}//end findlisteIDConseillers
 	
@@ -477,10 +442,9 @@ public class GestionClientsBean implements Serializable{
 /*====================================================================================================*/
 		
 	/**
-	 * Invoquée au click du bouton Ajouter de la page ajouter-client.xhtml <br/>
-	 * Permet d'ajouter un nouveau client à la bdd
-	 * @param event
+	 * Permet de recuperer la liste des identifiants des conseillers pour le select menu des pages ajouter_client.xhtml et modifier_client.xhtml
 	 */
+	
 	public List<Integer> findlisteIDConseillers() {
 		System.out.println("Je suis dans findlisteIDConseillers du MB de Client");
 		
@@ -490,12 +454,11 @@ public class GestionClientsBean implements Serializable{
 	}//end findlisteIDConseillers
 
 /*====================================================================================================*/	
-/*==findlisteComptesDuClient====================================================================================*/
+/*==findlisteComptesDuClient==========================================================================*/
 /*====================================================================================================*/
 			
 	/**
-	 * Invoquée au click du bouton Voir les comptes de la page afficher-client.xhtml <br/>
-	 * Permet d'afficher les comptes du client
+	 * Permet de recuperer les comptes du client pour la page afficher_client.xhtml
 	 * @param event
 	 */
 	public List<Compte> findlisteComptesDuClient() {
@@ -503,7 +466,6 @@ public class GestionClientsBean implements Serializable{
 
 		listeComptesDuClient = compteDAO.getCompteByIDClient(getIdClientSelectionner());
 
-		
 		return listeComptesDuClient;
 		
 	}//end findlisteComptesDuClient

@@ -42,4 +42,4 @@ public interface ICompteDAO {
 	
 	public boolean transfert(Compte compteDonneur, Compte compteReceveur, double montant);
 	
-}
+}//end class

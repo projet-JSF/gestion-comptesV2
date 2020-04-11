@@ -130,7 +130,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	/**
 	* Suppression d'un compte de la base de donnée 
 	* @param pIDCompte : identifiant du compte à supprimer
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -217,7 +217,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* Ajout d'un compte à la base de données
 	* 
 	* @param compte = un objet compte contenant toutes les infos du nouveau compte
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -267,7 +267,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* Modification d'un compte dans la bdd
 	* 
 	* @param compte = un objet compte ayant le même id que le compte à modifier et contenant toutes les infos nouvelles du nouveau compte
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -314,7 +314,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* Récuperation de la liste des comptes appartenant à un client 
 	* 
 	* @param compte = un objet compte ayant le même id que le compte à modifier et contenant toutes les infos nouvelles du nouveau compte
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	@Override
 	public List<Compte> getCompteByIDClient(int idClient) {
@@ -376,7 +376,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* 
 	* @param id_compte = identifiant du compte pour lequel on veut modifier le client
 	* @param idClient = identifiant du client auquel on veut attribuer le compte
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -421,7 +421,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* 
 	* @param compte = objet compte contenant les infos (incluant l'id) du compte à modifier 
 	* @param montant = montant à crediter
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -466,7 +466,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* 
 	* @param compte = objet compte contenant les infos (incluant l'id) du compte à modifier 
 	* @param montant = montant à debiter
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override
@@ -516,7 +516,7 @@ public class CompteDAOImpl implements ICompteDAO{
 	* @param compteDonneur =  compte contenant les infos (incluant l'id) du compte à débiter
 	* @param compteReceveur =  compte contenant les infos (incluant l'id) du compte à crediter
 	* @param montant = montant à transferer
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	@Override

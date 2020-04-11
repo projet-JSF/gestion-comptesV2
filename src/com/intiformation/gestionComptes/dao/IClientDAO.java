@@ -31,4 +31,4 @@ public interface IClientDAO {
 	public List<Integer> getAllIDClients();
 	
 	
-}
+}//end class

@@ -19,7 +19,7 @@ import com.intiformation.gestionComptes.model.Compte;
 import com.intiformation.gestionComptes.model.Conseiller;
 
 /**
- * managed bean pour la gestion des conseillers
+ * Managed bean pour la gestion des conseillers
  * @author Valentin
  *
  */
@@ -33,19 +33,26 @@ public class GestionConseillersBean implements Serializable{
 	//liste des conseillers au sein de la banque
 	List<Conseiller> listeConseillersBDD;
 	
-	//propriétés conseillers
+	//propriétés conseiller
 	private Conseiller conseiller;
 	
-	//autres propriétés utiles aux méthodes
+	//Identifient du conseiller selectionné
 	private int idConseillerSelectionner;
+	
+	//Liste des clients du conseiller
 	private List<Client> listeClientsduConseiller;
+	
+	//Liste des identifiants du conseiller pour le select menu de la page chercher_conseiller.xhtml
 	private List<Integer> listeIDConseillers;
+	
 	//dao du conseiller
 	IConseillerDAO conseillerDAO;
 
 	/*=========================CONSTRUCTEUR=========================*/
 
-	
+	/**
+	 * Constructeur vide qui instencie la dao du conseiller 
+	 */
 	public GestionConseillersBean() {
 		conseillerDAO=new ConseillerDaoImpl();
 	}
@@ -122,54 +129,61 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * récupération de la liste des conseillers en activité
+	 * Recupere la liste des conseillers de la base de données <br/>
+	 * Pour l'affichage de la table de la page liste_all_conseiller.xhtml
+	 * @return Liste des conseillers
 	 */
 	public List<Conseiller> findAllConseillers(){
 		System.out.println("Trouver la liste de tous les conseillers actuellement présents dans la BDD");
+		
 		listeConseillersBDD=conseillerDAO.getAllConseillers();
+		
 		return listeConseillersBDD;
-	}
+	}//end findAllConseillers
 	
-	/*====================================================================================================*/	
-	/*==findlisteIDConseillers====================================================================================*/
-	/*====================================================================================================*/
+/*====================================================================================================*/	
+/*==findlisteIDConseillers====================================================================================*/
+/*====================================================================================================*/
 			
-		/**
-		 * 
-		 * @param event
-		 */
-		public List<Integer> findlisteIDConseillers() {
-			System.out.println("Je suis dans findlisteIDConseillers du MB de Client");
+	/**
+	 * Recupere la liste des identifiants des conseillers <br/>
+	 * Permet de remplir le select menu de la page chercher_conseiller.xhtml
+	 * @return Liste des identifiants des conseillers (int)
+	 */
+	public List<Integer> findlisteIDConseillers() {
+		System.out.println("Je suis dans findlisteIDConseillers du MB de Client");
 			
-			listeIDConseillers=conseillerDAO.getAllIDConseillers();
+		listeIDConseillers=conseillerDAO.getAllIDConseillers();
 
-			return listeIDConseillers;
-		}//end findlisteIDConseillers
+		return listeIDConseillers;
+	}//end findlisteIDConseillers
 		
 /*====================================================================================================*/	
 /*==supprimerConseiller=================================================================================*/
 /*====================================================================================================*/	
 
 	/**
-	 * Supprimer un conseiller dans la BDD via la DAO, au clic sur le lien supprimer
+	 * Supprimer un conseiller dans la BDD via la DAO, au clic du bouton supprimer de la page afficher_conseiller.xhtml
 	 */
 	public void supprimerConseiller(ActionEvent event) {
 		System.out.println("Je suis dans supprimerClient du MB de Client");
 		
 		//1. recup de l'id du conseiller à supprimer
 		int conseillerID = conseiller.getIdConseiller();
-		System.out.println("Id du conseiller à supprimer :"+ conseillerID);
 		
-		//3. Recup du context
+		//2. Recup du context
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//Suppression des comptes associés à ce client
+		//3. On cherche la liste des clients du conseiller
 		
 		List<Client> listeCLientsduConseiller = conseillerDAO.getClientsduConseiller(conseillerID);
 		
-		if(listeCLientsduConseiller.isEmpty()) { //on test si le conseiller a des client. 
-			//On test la suppression
+		//4. On test si la liste des clients est vide : oui => on fait la suppression / non => On annule la suppression
+		
+		if(listeCLientsduConseiller.isEmpty()) { 
+			//=> Le conseiller n'est affilié à aucun client
 			
+			//On test la suppression
 			if (conseillerDAO.supprimerConseillerByID(conseillerID)) {
 				
 				// ========== Suppression OK ========
@@ -189,7 +203,9 @@ public class GestionConseillersBean implements Serializable{
 			}//end else
 		
 		
-		}else { //si le conseiller est affilié à des clients, on ne fait pas la suppression
+		}else { 
+			//si le conseiller est affilié à des clients, on ne fait pas la suppression
+			
 			contextJSF.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Echec" ,"La suppression du conseiller a échouée : le conseiller est affilié à des clients."));
 
 		}//end else
@@ -202,8 +218,8 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * Invoquée au click du bouton Afficher de la page liste_conseillers.xhtml <br/>
-	 * Permet de stocker les info du conseiller selectionner dans la propriétée 'conseiller' du managed bean.
+	 * Invoquée au click du bouton Modifier de la page afficher_conseiller.xhtml <br/>
+	 * Permet de stocker les info du conseiller affiché dans la propriétée 'conseiller' du managed bean.
 	 * @param event
 	 */
 		
@@ -213,7 +229,6 @@ public class GestionConseillersBean implements Serializable{
 		//1. recup de l'id du conseiller à modifier
 		int conseillerID = getIdConseillerSelectionner();
 		
-		System.out.println("id : "+ conseillerID);
 		//2. recup du conseiller dans la bdd par l'id
 		Conseiller conseillerEdit = conseillerDAO.getConseillerByID(conseillerID);
 			
@@ -228,7 +243,8 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * permet d'obtenir des informations sur un conseiller
+	 * Invoquée au click du lien Afficher de la page liste_all_conseiller.xhtml <br/>
+	 * Permet de stocker les info du conseiller selectionné dans la propriétée 'conseiller' du managed bean.
 	 */
 	public void  selectionnerConseiller(ActionEvent event) {
 		System.out.println("Pour sélectionner un conseiller dans selectionnerConseiller du MB de Client");
@@ -236,7 +252,7 @@ public class GestionConseillersBean implements Serializable{
 		//1. récup du param passé dans le composant au click du lien modifier
 		UIParameter cp = (UIParameter) event.getComponent().findComponent("afficherID");
 		
-		//2. recup de la valeur du param => l'id du conseiller à modifier
+		//2. recup de la valeur du param => l'id du conseiller à afficher
 		int conseillerID = (int) cp.getValue();
 		
 		//3. recup du conseiller dans la bdd par l'id
@@ -252,7 +268,8 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * permet de modifier les informations concernant un conseiller
+	 *  Invoquée au click du bouton Modifier de la page modifier_conseiller.xhtml <br/>
+	 *  Permet de modifier le conseiller dans la bdd
 	 */
 	public void modifierConseiller(ActionEvent event) {
 		System.out.println("Pour modifier les infos d'un conseiller avec modifierClient du MB de Client");
@@ -279,16 +296,17 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * pour Initialiser un conseiller vide en révision de la creation d'un nouveau client
+	 * Invoqué au clic de Ajouter un conseiller dans la bar de menu
+	 * pour Initialiser un conseiller vide en prévision de la creation d'un nouveau conseiller
 	 */
 	public void initialiserConseiller(ActionEvent event){
 		System.out.println("Je suis dans initialiserConseiller du MB de Conseiller");
 		
-		//Instanciation d'un nouvel objet conseiller vide dans lequel on va stocker les infos du nouveau client via le formulaire
+		//1. Instanciation d'un nouvel objet conseiller vide dans lequel on va stocker les infos du nouveau client via le formulaire
 
 		Conseiller addConseiller = new Conseiller();
 		
-		//Affectation de l'objet à la prop Conseiller du MB
+		//2. Affectation de l'objet à la prop Conseiller du MB
 		setConseiller(addConseiller);
 	}//end initialiserConseiller
 
@@ -299,15 +317,16 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
+	 * Invoqué au clic de Ajouter dans la page ajouter_conseiller.xhtml
 	 * Ajoute un conseiller à la bdd
 	 */
 	public void ajouterConseiller(ActionEvent event) {
 		System.out.println("Je suis dans ajouterConseiller du MB de Client");
 		
-		// Récuperation du context jsp
+		//1. Récuperation du context jsp
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//On test si l'ajout a reussit
+		//2. On test si l'ajout a reussit
 		if(conseillerDAO.ajouterConseiller(conseiller)) {
 			System.out.println("L'ajout est un succès");
 			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
@@ -327,16 +346,14 @@ public class GestionConseillersBean implements Serializable{
 /*====================================================================================================*/
 				
 	/**
-	 * Invoquée au click du bouton Voir les comptes de la page afficher-client.xhtml <br/>
-	 * Permet d'afficher les comptes du client
+	 * 
+	 * Permet d'afficher les clients du conseiller
 	 * @param event
 	 */
 	public List<Client> findlisteClientsDuConseiller() {
 		System.out.println("Je suis dans findlisteComptesDuClient du MB de Client");
-		System.out.println(getIdConseillerSelectionner());
 		
 		listeClientsduConseiller = conseillerDAO.getClientsduConseiller(getIdConseillerSelectionner());
-		System.out.println(listeClientsduConseiller);
 			
 		return listeClientsduConseiller;
 			

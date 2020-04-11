@@ -32,19 +32,25 @@ public class GestionComptesBean implements Serializable{
 
 /*=========================PROPRIETES=========================*/
 	
-	// Liste des comptes pour alimenter la page accueil.xhtml
+	// Liste de tous les comptes pour affichage sur la page liste_all_comptes.xhtml
 	List<Compte> listeComptesBDD;
 	
 	// Propriété compte pour l'ajout et pour l'édition
 	private Compte compte;
 	
-	//autres props utils aux differentes fonctions
+	//identifiant du compte selectionné pour la fonction selectionnerCompteSansParam
 	private int idCompteSelectionner;
+	
+	//Client propriétaire duu compte selectionné
 	private Client clientProprietaireCompteSelec;
 	
+	//Liste des id des comptes pour la page chercher_compte.xhtml
 	private List<Integer> listeIDCompte;
+	
+	//Liste des id des clients pour les select mennu des pages ajouter_compte.xhtml et modifier_compte.xhtml
 	private List<Integer> listeIDClient;
 	
+	//Liste des comptes appartenant aux clients du conseiller connecté pour l'affichage sur la page accueil.xhtml
 	private List<Compte> listeComptesDuConseillerLogged;
 
 	//Props pour le virement
@@ -59,6 +65,7 @@ public class GestionComptesBean implements Serializable{
 	//dao des comptes
 	ICompteDAO compteDAO;
 	
+	//dao des clients
 	IClientDAO clientDAO;
 	
 	//dao du conseiller
@@ -67,7 +74,7 @@ public class GestionComptesBean implements Serializable{
 	/*=========================CONSTRUCTEUR=========================*/
 	/**
 	 * Constructeur vide pour l'instanciation du managedbean <br/>
-	 * Instancie la dao du compte
+	 * Instancie la dao du compte, du client et du conseiller
 	 */
 	
 	public GestionComptesBean() {
@@ -239,20 +246,20 @@ public class GestionComptesBean implements Serializable{
 	 */
 	public Compte findCompteByID(int idCompte){
 		System.out.println("Je suis dans findCompteByID du MB de Compte");
-		System.out.println("idCompte : "+idCompte);
 		
 		Compte compte=compteDAO.getCompteByID(idCompte);
 
 		return compte;
 	}//end findCompteByID	
+	
 /*====================================================================================================*/	
 /*==findAllComptesBdd=================================================================================*/
 /*====================================================================================================*/	
 	
 	/**
 	 * Recupere la liste des comptes dans la bdd via la dao. <br/>
-	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-	 * @return
+	 * Cette methode permet d'alimenter la table dans liste_all_comptes.xhtml pour affichage
+	 * @return Liste des comptes de la bdd
 	 */
 	public List<Compte> findAllComptesBdd(){
 		System.out.println("Je suis dans findAllComptesBdd du MB de Compte");
@@ -270,7 +277,7 @@ public class GestionComptesBean implements Serializable{
 	/**
 	 * Recupere la liste des comptes appartenant au conseiller enregistré via la dao. <br/>
 	 * Cette methode permet d'alimenter la table dans accueil.xhtml pour affichage
-	 * @return
+	 * @return Liste des comptes du conseiller connecté
 	 */
 	public List<Compte> findComptesDuConseiller(int idConseiller){
 		System.out.println("Je suis dans findComptesDuConseiller du MB de Compte");
@@ -307,23 +314,21 @@ public class GestionComptesBean implements Serializable{
 /*==supprimerCompte=================================================================================*/
 /*====================================================================================================*/	
 	/**
-	 * Méthode invoquée au click sur le lien 'supprimer' de accueil.xhtml 
+	 * Méthode invoquée au click sur le lien 'supprimer' de afficher_compte.xhtml 
 	 * Permet de supprimer un client dans la bdd via la dao
 	 */
 	
 	public void supprimerCompte(ActionEvent event) {
 		System.out.println("Je suis dans supprimerCompte du MB de Compte");
 		
-		System.out.println(getCompte().toString());
-		
-		//2. recup de l'id du client à supprimer
+		//1. recup de l'id du client à supprimer
 		int compteID = compte.getIdCompte();
 		System.out.println("Id du compte à supprimer :"+ compteID);
 		
-		//3. Recup du context
+		//2. Recup du context
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//4. On test la suppression
+		//3. On test la suppression
 		
 		if (compteDAO.supprimerCompteByID(compteID)) {
 			
@@ -344,68 +349,31 @@ public class GestionComptesBean implements Serializable{
 		}//end else
 	}//end supprimerClientsBdd
 
-//	/**
-//	 * Méthode invoquée au click sur le lien 'supprimer' de accueil.xhtml 
-//	 * Permet de supprimer un compte dans la bdd via la dao
-//	 */
-//	
-//	public void supprimerCompte(ActionEvent event) {
-//		System.out.println("Je suis dans supprimerCompte du MB de Compte");
-//		
-//		//1. récup du param passé dans le composant au click du lien supprimer
-//		UIParameter cp = (UIParameter) event.getComponent().findComponent("deleteID");
-//		
-//		//2. recup de la valeur du param => l'id du compte à supprimer
-//		int compteID = (int) cp.getValue();
-//		
-//		//3. Recup du context
-//		FacesContext contextJSF = FacesContext.getCurrentInstance();
-//		
-//		//4. On test la suppression
-//		
-//		if (compteDAO.supprimerCompteByID(compteID)) {
-//			
-//			// ========== Suppression OK ========
-//			/* Envoi d'un message vers la vue via le context */
-//			
-//			contextJSF.addMessage(null, new FacesMessage( "Le compte a été supprimer avec succès"));
-//			
-//		}else {
-//			
-//			// ========== Suppression NOT OK ========
-//			/* Envoi d'un lessage vers la vue via le context */
-//			
-//			contextJSF.addMessage(null, new FacesMessage("La suppression du compte a échouée"));
-//			
-//			
-//		}//end else
-//	}//end supprimerComptesBdd
-	
 /*====================================================================================================*/	
 /*==selectionnerCompteSansParam================================================================================*/
 /*====================================================================================================*/	
 
 	/**
-	 * Invoquée au click du bouton Afficher de la page accueil.xhtml <br/>
-	 * Permet de stocker les info du client selectionner dans la propriétée 'client' du managed bean.
+	 * Invoquée au click du bouton Modifier de la page afficher_compte.xhtml <br/>
+	 * Permet de stocker les info du compte affiché dans la propriétée 'compte' du managed bean.
 	 * @param event
 	 */
 		
 	public void selectionnerCompteSansParam(ActionEvent event) {
 		System.out.println("Je suis dans selectionnerClientSansParam du MB de Client");
 
+		//1. Recup de l'id du compte
 		int compteID = getIdCompteSelectionner();
 			
-		//3. recup du client dans la bdd par l'id
+		//2. recup du compte dans la bdd par l'id
 		Compte compteEdit = compteDAO.getCompteByID(compteID);
 			
-		//4. affectation du client à modifier à la prop client du managedbean
+		//3. affectation du compte à sélectionné à la prop compte du managedbean
 		setCompte(compteEdit);
 		
-		//Recup de la liste des id des clients
+		//4. Recup de la liste des id des clients pour alimenter le select menu de la page modifier_compte.xhtml
 		setListeIDClient(clientDAO.getAllIDClients());
 	
-		
 		
 		}//end selectionnerClient
 		
@@ -414,51 +382,48 @@ public class GestionComptesBean implements Serializable{
 /*====================================================================================================*/	
 
 	/**
-	 * Invoquée au click du bouton Modifier de la page accueil.xhtml <br/>
-	 * Permet de stocker les info du compte selectionner dans la propriétée 'compte' du managed bean.
+	 * Invoquée au click du bouton Afficher de la page accueil.xhtml et liste_all_compte.xhtml <br/>
+	 * Permet de stocker les info du compte selectionné dans la propriétée 'compte' du managed bean.
 	 * @param event
 	 */
 	
 	public void selectionnerCompte(ActionEvent event) {
 		System.out.println("Je suis dans selectionnerCompte du MB de Compte");
 
-		//1. récup du param passé dans le composant au click du lien modifier
+		//1. récup du param passé dans le composant afficherID au click du lien afficher
 		UIParameter cp = (UIParameter) event.getComponent().findComponent("afficherID");
 		
-		//2. recup de la valeur du param => l'id du client à modifier
+		//2. Recup de la valeur du param => l'id du compte à afficher
 		int compteID = (int) cp.getValue();
 		
-		//3. recup du compte dans la bdd par l'id
+		//3. Recup du compte dans la bdd par l'id
 		Compte compteEdit = compteDAO.getCompteByID(compteID);
 		
-		//4. affectation du compte à modifier à la prop compte du managedbean
+		//4. Affectation du compte à afficher à la prop compte du managedbean
 		setCompte(compteEdit);
 		
-		//Recup de la liste des id des clients
-		setListeIDClient(clientDAO.getAllIDClients());
-		
-		//Recup du client propriétaire
+		//5. Recup du client propriétaire
 		setClientProprietaireCompteSelec(clientDAO.getClientByID(compte.getClientID()));
-		System.out.println(clientProprietaireCompteSelec);
 		
-		
-		/**
-		 * Dans la page editer_compte.xhtml => on recupere le compte à editer via la prop compte du MB
-		 */
 		
 	}//end selectionnerCompte
 	
 /*====================================================================================================*/	
-/*==getProprietaire====================================================================================*/
+/*==getProprietaire===================================================================================*/
 /*====================================================================================================*/
 	/**
-	 * 
+	 * Permet de recuperer le client propriétaire d'un compte dans une liste (pour l'affichage sous forme de table)
 	 * @return une liste contenant un seul client (proprio du compte selectionner)
 	 */
 	public List<Client> getProprietaire(){
 		System.out.println("Je suis dans getProprietaire du managed bean du compte");
+		
+		// 1. Initialisation d'une liste vide pour stocker le client propriétaire
 		List<Client> proprietaireFormatListe= new ArrayList<>();
+		
+		//2. Ajout du client à la liste
 		proprietaireFormatListe.add(clientProprietaireCompteSelec);
+		
 		return proprietaireFormatListe;
 	}//end getProprietaire
 	
@@ -479,14 +444,16 @@ public class GestionComptesBean implements Serializable{
 		//1. Récupération du context JSP	
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//On remet à 0 le taux/decouvert en fonction du type de compte
+		//2. On remet à 0 le taux/decouvert en fonction du type de compte 
 		if(compte.getTypeCompte().equals("courant")) {
+			//Si le compte est courant, on met le taux à 0
 			compte.setTaux(0);
 		}else {
+			//Si le compte est epargne, on met le decouvert à 0
 			compte.setDecouvert(0);
 		}
 		
-		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire)
+		//3. La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire)
 		
 		//On test si la modification s'est bien passé
 		
@@ -515,24 +482,21 @@ public class GestionComptesBean implements Serializable{
 /*====================================================================================================*/
 	
 	/**
-	 * Invoqué au click du bouton 'ajouter un compte' de la page 'accueil.xhtml'
+	 * Invoqué au click du bouton 'ajouter un compte' de la bar de menu
 	 * Permet d'initialiser un objet de type Compte à vide pour recuperer les valeurs saisies dans le formulaire de la page ajouter_compte.xhtml
 	 */
 	public void initialiserCompte(ActionEvent event){
 		
 		System.out.println("Je suis dans initialiserCompte du MB de Compte");
 		
-		//Instanciation d'un nouvel objet client vide dans lequel on va stocker les infos du nouveau compte via le formulaire
+		//1. Instanciation d'un nouvel objet client vide dans lequel on va stocker les infos du nouveau compte via le formulaire
 		Compte addCompte = new Compte();
 		
-		//Affectation de l'objet à la prop compte du MB
+		//2. Affectation de l'objet à la prop compte du MB
 		setCompte(addCompte);
 		
-		//Recup de la liste des id des clients
+		//Recup de la liste des id des clients pour le select menu de la page ajouter_compte.xhtml
 		setListeIDClient(clientDAO.getAllIDClients());
-		System.out.println("Liste id client = "+ clientDAO.getAllIDClients());
-		
-		
 		
 	}//end initialiserCompte
 
@@ -549,18 +513,20 @@ public class GestionComptesBean implements Serializable{
 	public void ajouterCompte(ActionEvent event) {
 		System.out.println("Je suis dans ajouterCompte du MB de Compte");
 		
-		// Récuperation du context jsp
+		// 1. Récuperation du context jsp
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 		
-		//On remet à 0 le taux/decouvert en fonction du type de compte
+		//2. On remet à 0 le taux/decouvert en fonction du type de compte
 		if(compte.getTypeCompte().equals("courant")) {
+			// Si le compte est courant, on met le taux à 0
 			compte.setTaux(0);
 		}else {
+			// Si le compte est epargne on met le decouvert à 0
 			compte.setDecouvert(0);
-		}
+		}//end else
 		
 		
-		//Ajout du compte dans la bdd
+		//3. Ajout du compte dans la bdd
 		//-> les infos du nouveau compte ont été stocké dans l'objet compte du MB au moment d'envoyer le formulaire
 		
 		
@@ -568,7 +534,7 @@ public class GestionComptesBean implements Serializable{
 		
 		if(compteDAO.ajouterCompte(compte)) {
 			//-----------------AJOUT OK-------------------
-			System.out.println("L'ajout est un succès");
+			System.out.println("L'ajout du compte est un succès");
 			//Envoie d'un message de réussite
 			
 			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_INFO,
@@ -576,12 +542,12 @@ public class GestionComptesBean implements Serializable{
 					"Le compte a été ajouté avec succès"));
 		}else {
 			//-----------------AJOUT NOT OK----------------
-			System.out.println("L'ajout est un echec");
+			System.out.println("L'ajout du compte est un echec");
 			//Envoie d'un message d'erreur
 
 			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
 					"Echec de l'ajout", 
-					"L'ajout n'a pas été effectué"));
+					"L'ajout du compte n'a pas été effectué"));
 		}//end else
 	}//end ajouterCompte
 
@@ -591,14 +557,12 @@ public class GestionComptesBean implements Serializable{
 /*====================================================================================================*/
 				
 	/**
-	 * Invoquée au click du bouton Ajouter de la page ajouter-client.xhtml <br/>
-	 * Permet d'ajouter un nouveau client à la bdd
+	 * Invoquée au click du bouton chercher un compte de la bar de menu <br/>
+	 * Permet de recuperer la liste des identifiants des comptes
 	 * @param event
 	 */
 	public void findlisteIDComptes() {
-		System.out.println("Je suis dans findlisteIDClients du MB de Client");
-		System.out.println("Liste clients :" + compteDAO.getAllIDComptes());
-
+		System.out.println("Je suis dans findlisteIDComptes du MB de Compte");
 			
 		setListeIDCompte(compteDAO.getAllIDComptes());
 
@@ -615,15 +579,14 @@ public class GestionComptesBean implements Serializable{
 	public void creditCompte (ActionEvent event) {
 		System.out.println("Je suis dans creditCompte du MB de Compte");
 			
-		// Récuperation du context jsp
+		// 1. Récuperation du context jsp
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 			
-		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde
-					//+ ajout du montant
+		//La propriété compte du managed bean encapsule les infos du compte à crediter 
 		//La propriété montantCredit renseigne le montant à crediter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
 		
 		
-		//On test si le credit s'est bien passé
+		//2. On test si le credit s'est bien passé
 					
 		if(compteDAO.deposit(compte, montantCredit)) {
 			//------------- DEPOT OK--------------------
@@ -682,36 +645,40 @@ public class GestionComptesBean implements Serializable{
 /*====================================================================================================*/
 			
 	/**
-	* Permet d'effectuer un retrait sur un compteDonneur et un ajout sur un compteReceveur, au click du bouton 'Débiter' de la page 'afficher_compte.xhtml'
+	* Permet d'effectuer un retrait sur un compte, au click du bouton 'Débiter' de la page 'afficher_compte.xhtml'
 	* @param event
 	*/
 	public void debitCompte (ActionEvent event) {
 		System.out.println("Je suis dans debitCompte du MB de Compte");
 				
-		// Récuperation du context jsp
+		// 1. Récuperation du context jsp
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 				
-		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde 
-						//+ retrait du montant 
+		//La propriété compte du managed bean encapsule les infos du compte à debiter dans la dbb 
 		//La propriété montantDebit renseigne le montant à débiter. Il est renseigné par le champ du formulaire de la page afficher_compte.xhtml
-		// la propriété montantDebit renseigne respectivement le montant à débiter du compte.
 			
 		
-		//On vérifie si la somme débiter est disponible sur le compte : montantDebit <= solde du compte = autorisation
+		//2. On calcule le montant maximum que l'on peut retirer du compte
 		double montantmaximum;
+		
 		if(compte.getTypeCompte().equals("courant")) {
+			//Si le compte est courant, le montant maximum équivaut au solde + decouvert
 			montantmaximum=compte.getSolde()+compte.getDecouvert();
 			
 		}else {
+			//Si le compte est épargne, le montant maximum est simplement le solde
 			montantmaximum=compte.getSolde();
 		}//end else
 		
-	
+		
+		//3. On vérifie si la somme à débitée est disponible sur le compte : montantDebit < montantmaximum = autorisation
+		
 		if (montantDebit < montantmaximum) {
-			//Si condition valide
+			//Si condition le retrait est autorisé :
+			
 			System.out.println("Le retrait est autorisé.");
 			
-			//On test si le debit s'est bien passé
+			//4. On test si le debit s'est bien passé
 			if(compteDAO.withdraw(compte, montantDebit)) {
 				//------------- DEPOT OK--------------------
 				//Envoie d'un message de réussite
@@ -732,8 +699,9 @@ public class GestionComptesBean implements Serializable{
 																	"Echec du retrait", 
 																	"La modification n'a pas été effectué"));
 			}//end else
+			
 		}else {
-			//condition non validée
+			//Si la somme demandée est trop élevée :
 			System.out.println("Le retrait n'a pas été autorisé.");
 			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
 																"Retrait refusé", 
@@ -757,27 +725,33 @@ public class GestionComptesBean implements Serializable{
 	public void virementCompte (ActionEvent event) {
 		System.out.println("Je suis dans virementCompte du MB de Compte");
 					
-		// Récuperation du context jsp
+		// 1. Récuperation du context jsp
 		FacesContext contextJSF = FacesContext.getCurrentInstance();
 					
-		//La propriété compte du managed bean encapsule les infos du compte à modifier dans la dbb (récupérées du formulaire) = modification solde des 2 comptes
-						//+ retrait du montant 
-		//La propriété montant renseigne le montant à transférer. Il est renseigné par le champ du formulaire de la page virement_compte.xhtml
-		// les propriétés idCompteDonneur et idCompteReceveur renseigne respectivement les id des comptes à débiter et à créditer.
-				
-		Compte compteDonneur = compteDAO.getCompteByID(idCompteDonneur);  //on recupere les comptes par leur ID
+		//La propriété montantVirement renseigne le montant à transférer. Il est renseigné par le champ du formulaire de la page virement_compte.xhtml
+		// les propriétés idCompteDonneur et idCompteReceveur renseigne respectivement les id des comptes à débiter et à créditer. Ils sont renseignés par les select menu de la page virement_compte.xhtml
+		
+		//2. On recupere les comptes donneur et receveur par leurs ID
+		Compte compteDonneur = compteDAO.getCompteByID(idCompteDonneur);  
 		Compte compteReceveur = compteDAO.getCompteByID(idCompteReceveur);
-				
+		
+		//3. On calcule le montant maximum que l'on peut débiter du compte donneur
 		double montantmaximum;
 		if(compteDonneur.getTypeCompte().equals("courant")) {
+			// Pour un compte courant : montant maximum = solde + decouvert
 			montantmaximum=compteDonneur.getSolde()+compteDonneur.getDecouvert();
 			
 		}else {
+			// Pour un compte epargne : montant maximum = solde
 			montantmaximum=compteDonneur.getSolde();
 		}//end else
 		
-	
+		//4. On test si le montant à virer est inférieur au montant maximum
+		
 		if (montantVirement < montantmaximum) {
+			// Virement autorisé
+			System.out.println("Le virement a été autorisé.");
+			
 			//On test si le transfère s'est bien passé
 			if(compteDAO.transfert(compteDonneur,compteReceveur, montantVirement)) {
 						
@@ -804,8 +778,11 @@ public class GestionComptesBean implements Serializable{
 																		"Echec du transfère", 
 																		"Les modifications n'ont pas été effectué"));
 			}//end else
+			
+			
 		}else {
-			//condition non validée
+			//Virement non autorisé
+			
 			System.out.println("Le virement n'a pas été autorisé.");
 			contextJSF.addMessage(null, new FacesMessage( FacesMessage.SEVERITY_ERROR,
 																"Virement refusé", 
@@ -814,4 +791,7 @@ public class GestionComptesBean implements Serializable{
 		}//end else					
 							
 	}//end virementCompte
+	
+	
+	
 }//end class

@@ -136,7 +136,7 @@ public class ConseillerDaoImpl implements IConseillerDAO{
 	* Ajout d'un conseiller à la base de données
 	* 
 	* @param conseiller = un objet conseiller contenant toutes les infos du nouveau conseiller
-	* @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	* @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	*/	
 	
 	
@@ -181,7 +181,7 @@ public class ConseillerDaoImpl implements IConseillerDAO{
 	 * Modification d'un conseiller dans la bdd
 	 * 
 	 * @param conseiller = un objet conseiller ayant le même id que le conseiller à modifier et contenant toutes les infos nouvelles du nouveau conseiller
-	 * @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	 * @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	 */
 	
 	@Override
@@ -226,7 +226,7 @@ public class ConseillerDaoImpl implements IConseillerDAO{
 	/**
 	 * Suppression d'un conseiller de la base de donnée 
 	 * @param pIDConseiller : identifiant du conseiller à supprimer
-	 * @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	 * @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	 */	
 	
 	

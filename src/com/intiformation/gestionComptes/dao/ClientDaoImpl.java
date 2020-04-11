@@ -81,8 +81,8 @@ public class ClientDaoImpl implements IClientDAO{
 	/**
 	 * Ajout d'un client à la base de données
 	 * 
-	 * @param client = un objet client contenant toutes les infos du nouveau client
-	 * @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	 * @param client = un objet client contenant toutes les informations du nouveau client
+	 * @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	 */
 	
 	@Override
@@ -129,7 +129,7 @@ public class ClientDaoImpl implements IClientDAO{
 	 * Modification d'un client dans la bdd
 	 * 
 	 * @param client = un objet client ayant le même id que le client à modifier et contenant toutes les infos nouvelles du nouveau client
-	 * @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	 * @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	 */
 	
 	@Override
@@ -179,7 +179,7 @@ public class ClientDaoImpl implements IClientDAO{
 	/**
 	 * Suppression d'un client de la base de donnée 
 	 * @param pIDClient : identifiant du client à supprimer
-	 * @return boolean : true=l'operation s'est bien passé / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
+	 * @return boolean : true=l'operation s'est bien passée / false= il y a eu une erreur et l'operation n'a pas pu être effectuée
 	 */
 	
 	@Override
